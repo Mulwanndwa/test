@@ -83,7 +83,7 @@ var DependantTypes = [
     "Spouse", "Child", "Relative"
 ];
 
-var appVersion = '2.2.4';
+var appVersion = '2.2.8';
 
 var baseUrl = "https://admin.insurapp.co.za";
 //var baseUrl = "http://demo.insurapp.co.za"; 
@@ -182,7 +182,7 @@ $(document).ajaxComplete(function() {
 
 function onAppReady() {
     console.log("app is ready...")
-    
+    StatusBar.backgroundColorByName("red");
     User = JSON.parse(localStorage.getItem("User")); 
     myApp.showPreloader('Please wait...');
     //window.setTimeout(function () {
