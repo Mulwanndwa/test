@@ -46,8 +46,6 @@
     "cordova-plugin-inappbrowser": "^1.4.0",
     "cordova-plugin-ionic-keyboard": "^2.2.0",
     "cordova-plugin-ionic-webview": "^4.2.1",
-    "cordova-plugin-keyboard": "^1.2.0",
-    "cordova-plugin-media": "^5.0.3",
     "cordova-plugin-splashscreen": "^5.0.2",
     "cordova-plugin-statusbar": "^2.4.3",
     "cordova-plugin-whitelist": "^1.2.2"
