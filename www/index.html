@@ -84,17 +84,12 @@
             cursor: pointer; /* Add a pointer on hover */
         }
     </style>
-   
-    <script src="cordova.js"></script>          <!-- phantom library, needed for Cordova api calls, added during build -->
-    <script src="xdk/init-dev.js"></script>     <!-- normalizes device and document ready events, see README for details -->
+
 </head>
 <body onLoad="JavaScript:checkRefresh();" style="font-family: 'Oswald', sans-serif;font-size: 18px;">
     <!-- Status bar overlay for fullscreen mode-->
     <div class="custom-preloader" style="display:none"></div>
-    <div class="loader-overlay"></div>
-
-    <div class="statusbar-overlay"></div>
-    <div id="overlay"></div>
+    <div class="loader-overlay" style="display:none"></div>
 
     <div class="panel-overlay"></div>
 
