@@ -8,10 +8,7 @@
       "windows",
       "browser"
     ],
-    "plugins": {
-      "cordova-plugin-media": {},
-      "cordova-plugin-camera": {}
-    }
+    "plugins": {}
   },
   "devDependencies": {}
 }
