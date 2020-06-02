@@ -1,7 +1,5 @@
 {
-  "name": "InsurApp",
-  "integrations": {
-    "cordova": {}
-  },
+  "name": "Insurapp",
+  "integrations": {},
   "type": "custom"
 }
