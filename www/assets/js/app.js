@@ -83,7 +83,7 @@ var DependantTypes = [
     "Spouse", "Child", "Relative"
 ];
 
-var appVersion = '2.4.8';
+var appVersion = '2.4.9';
 
 var baseUrl = "https://admin.insurapp.co.za";
 //var baseUrl = "http://demo.insurapp.co.za"; 
@@ -145,8 +145,6 @@ if(localStorage.getItem("User")!=null){
 $(document).ajaxStart(function() {
     $(".loaderText").html('Please wait...')
     if(ShowLoader){
-        
-        $(".loader-overlay").show();
         $(".modal-overlay").show();
         myApp.showPreloader();
     }
@@ -155,7 +153,6 @@ $(document).ajaxStart(function() {
 
 $(document).ajaxComplete(function() {
     $(".loaderText").html('')
-    $(".loader-overlay").hide();
     $(".modal-overlay").hide();
     myApp.hidePreloader();
 });
@@ -182,14 +179,14 @@ $(document).ajaxComplete(function() {
 
 function onAppReady() {
     console.log("app is ready...")
-    StatusBar.backgroundColorByName("red");
-    User = JSON.parse(localStorage.getItem("User")); 
+    StatusBar.backgroundColorByName("black");
+    // User = JSON.parse(localStorage.getItem("User")); 
     myApp.showPreloader('Please wait...');
     //window.setTimeout(function () {
         myApp.hidePreloader();
         mainView.router.loadPage('login.html')
     //},300)
-    handleExternalURLs()
+    //handleExternalURLs()
 }
 
 document.addEventListener("app.Ready", onAppReady, false);
