@@ -1,0 +1,68 @@
+<div class="pages navbar-fixed toolbar-fixed">
+    <div data-page="life_insurance_product_terms" class="page">
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="left">
+                    <a href="#" class="link back icon-only text-blue back">
+                        <span class="fa fa-arrow-left fa-2x"></span>
+                    </a>
+                </div>
+                <div class="center sliding Montserrat-Regular">
+                    <span id="FuneralProductTerms_Name"></span><br />
+                    <div id="FuneralProductTerms_PolicyNumber"></div>
+                </div>
+                <div class="right">
+                    <a href="#" class="link icon-only text-pink home">
+                        <span class="fa fa-home fa-2x"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-content" style="padding-bottom:0px;">
+
+            <form id="LifeCoverStep3Form">
+
+
+                <div class="content-block text-pink text-center" style="margin-bottom: 5px;"><p>Select a language</p></div>
+
+                <div class="list-block" style="margin-top: 5px;">
+
+                    <ul id="FuneralProductTerms_Buttons"></ul>
+                    <ul>
+                        <li style="padding-top: 10px;">
+                            <label class="label-checkbox item-content">
+                                <!-- Checked by default -->
+                                <input type="checkbox" name="agreetoterms" value="true">
+                                <div class="item-media">
+                                    <i class="icon icon-form-checkbox"></i>
+                                </div>
+                                <div class="item-inner">
+                                    <div class="" style="font-size: 10px;">
+                                        I confirm that I have received, read, understood and accepted the product terms and conditions.
+                                    </div>
+                                </div>
+                            </label>
+                        </li>
+                    </ul>
+
+                    <ul style="font-size: 12px; text-align: center;">
+                        <li class="item-label text-pink"> Please enter the serial number on the policy wording being given to you:</li>
+                        <li class="item-content  textbox no-margin-top">
+                            <div class="item-inner">
+                                <div class="item-input">
+                                    <input type="text" class="text-center text-pink" id="policy_wording_id" style="border: solid thin #ddd;" />
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </form>
+            <div class="content-block">
+                <a href="javascript:AcceptTermsLifeInsurance();" class="close-popup button button-big button-fill bg-pink uppercase btn-with-icon" style="width: 60%; margin: 0 auto;">Proceed <i class="fa fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</div>

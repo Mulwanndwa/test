@@ -1,0 +1,51 @@
+<div class="navbar navbar-clear">
+    <div class="navbar-inner">
+        <div class="center sliding"></div>
+    </div>
+</div>
+<div class="pages navbar-fixed toolbar-fixed">
+
+    <div data-page="login" class="page page-bg full-page-video">
+        <div class="page-content login-screen-content">
+            <div class="login-screen-title">
+                <img src="assets/img/logo.png" style="width:30%;" />
+                
+            </div>
+            <!-- Login form -->
+            <form class="loginregisterform" id="LoginForm">
+              <div class="list-block condensed-form" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-radius: 10px;">
+                <ul>
+                  <li class="item-content textbox border-bottom-pink">
+                    <div class="item-inner">
+                      <div class="item-input" style="border-bottom:solid thin #ddd;">
+                        <input type="text" id="loginUsername" name="username" placeholder="Cellphone Number" value="">
+                      </div>
+                    </div>
+                  </li>
+                  <li class="item-content textbox">
+                    <div class="item-inner">
+                      <div class="item-input">
+                        <input type="password" name="password" placeholder="Password" value="">
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="list-block">
+                <ul>
+                  <li>
+                    <a href="javascript:ValidateLogin();" class="button button-big button-fill bg-pink uppercase" style="width: 70%;margin: 0 auto;">Login</a>
+                  </li>
+                 
+                </ul>
+                <div class="list-block-label">
+                    <a href="javascript:OpenForgotPassword();" class="text-red text-1x">Forgot Password?</a><br>
+                    <!-- <a href="javascript:OpenTermsAndConditions();" class="text-red text-1x">Terms and Conditions</a>
+                    <br /> -->
+                    <span class="text-center appVersion" style="float:right; color:#000000"></span>
+                  </div>
+              </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,103 @@
+<div class="pages navbar-fixed toolbar-fixed">
+    <div data-page="claim" class="page">
+        <div class="navbar">
+            <div class="navbar-inner"> 
+                <div class="left">
+                    <a href="#" data-panel="left" class="open-panel link icon-only text-blue">
+                        <span class="fa fa-bars"></span>
+                    </a>
+                </div>
+                <div class="center sliding Montserrat-Regular uppercase"><img src="assets/img/logo-top-badge-only.png" style="height: 30px;" /> &nbsp;&nbsp;CLAIM</div>
+                <div class="right">
+                    
+                </div>
+            </div>
+        </div>
+        
+            <div class="page-content" style="padding-bottom:0px;">
+                
+                <div class="lightbluearea purple">
+                    <div class="padded">
+                        
+                        <div class="Montserrat-Bold text-white pb5 text-center" id="ClaimProduct_Name"></div>
+                        <div class="Montserrat-Regular text-white text-center" id="ClaimProduct_PolicyNumber"></div>
+                        <br>
+                    </div>
+                </div>
+                <form id="ClaimForm">
+                
+                <div class="content-block-title text-purple text-center Montserrat-Bold">CLAIM DETAILS</div>                
+                    
+                    <input type="hidden" name="policy_number" /> 
+                    <input type="hidden" name="product" /> 
+                    
+                    <div class="list-block">
+                        <ul>
+                            <li>
+                              <div class="item-content">
+                                <div class="item-inner">
+                                  <div class="item-title label Montserrat-Bold">Name</div>
+                                  <div class="item-input">
+                                    <input type="text" placeholder="Your name" name="first_name">
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="item-content">
+                                <div class="item-inner">
+                                  <div class="item-title label Montserrat-Bold">Surname</div>
+                                  <div class="item-input">
+                                    <input type="text" placeholder="Your surname" name="last_name">
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="item-content">
+                                <div class="item-inner">
+                                  <div class="item-title label Montserrat-Bold">SA ID</div>
+                                  <div class="item-input">
+                                    <input type="number" placeholder="Your South African ID Number" name="id_number">
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="item-content">
+                                <div class="item-inner">
+                                  <div class="item-title label Montserrat-Bold">Cellphone</div>
+                                  <div class="item-input">
+                                    <input type="number" placeholder="Your cellphone" name="cellphone">
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="item-content">
+                                <div class="item-inner">
+                                  <div class="item-title label Montserrat-Bold">Email</div>
+                                  <div class="item-input">
+                                    <input type="email" placeholder="Your email address" name="email">
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                        </ul>
+                    </div>  
+                
+                    <div class="content-block">
+                        <div class="row">
+                            <div class="col-50">
+                                <a href="my_policies.html" class="close-popup button button-big button-fill bg-blue uppercase">Cancel</a>
+                            </div>
+                            <div class="col-50">
+                                <a href="javascript:ClaimStep1Save();" class="close-popup button button-big button-fill bg-purple uppercase">Claim</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </form>  
+            </div>
+    </div>
+</div>

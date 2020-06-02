@@ -1,0 +1,114 @@
+<div class="pages navbar-fixed toolbar-fixed">
+    <div data-page="funeral_product_sign" class="page">
+        <div class="navbar">
+            <div class="navbar-inner"> 
+                <div class="left">
+                    <a href="#" class="link back icon-only text-blue back">
+                        <span class="fa fa-arrow-left fa-2x"></span>
+                    </a>
+                </div>
+                <div class="center sliding Montserrat-Regular">
+                    <span id="FuneralProductSign_Name"></span><br />
+                    <div id="FuneralProductSign_PolicyNumber"></div>
+                </div>
+                <div class="right">
+                    <a href="#" class="link icon-only text-pink home">
+                        <span class="fa fa-home fa-2x"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page-content" style="padding-bottom:0px;">
+            <div class="p10 card">
+                <div class="content-block">
+                    <div class="condensed-form">
+                        <div style="padding-top: 20px;">
+
+                            <div class="Montserrat-Bold pb5 text-center text-pink" id="FuneralProductSign_Name_1"></div>
+                            <div class="Montserrat-Regular text-center" id="FuneralProductSign_PolicyNumber_1"></div>
+                            <div class="Montserrat-Regular text-center" id="FuneralProductSign_Period"></div>
+                            <div class="Montserrat-Regular text-center" id="FuneralProductSign_Premium"></div>
+                            <br />
+                        </div>
+                    </div>
+                </div>
+
+                <form>
+                    <div class="content-block">
+                        <p class="text-center text-pink">Client Signature</p>
+                        <div id="signature-pad" class="signature-pad" style="border:solid thin #ddd;">
+                            <canvas id="canvasSignature" crossorigin="anonymous"></canvas>
+
+                            <form action="https://sigplusweb.com/sign_chrome_ff_sigplusextlite.html#" name="FORM1">
+                                <input type="HIDDEN" name="bioSigData">
+                                <input type="HIDDEN" name="sigImgData">
+                                <input type="hidden" name="sigStringData">
+                                <input type="hidden" name="sigRawData">
+
+                                <!--    <textarea name="sigStringData" rows="20" cols="50">SigString: </textarea>
+                        <textarea name="sigRawData" rows="20" cols="50">Base64 String: </textarea> -->
+                                <!-- <input class="button button-big button-fill bg-pink uppercase btn-with-icon" style="margin: 0 auto;" id="SignBtn" name="SignBtn" type="button" value="Sign" onclick="Resign()"> -->
+                            </form>
+
+                        </div>
+                        <div class="">
+                            <img crossOrigin="Anonymous" src="" id="FuneralProductSign_SignDisplay" style="display:none;width: 100%;" />
+
+                            <canvas id="canvasSignature2" crossorigin="anonymous" style="display:none;"></canvas>
+                            <canvas id="canvasSignature3" crossorigin="anonymous" style="display:none;"></canvas>
+                        </div>
+
+                        <p id="SignLabel" class="text-center">Sign here <br><hr></p>
+
+                        <div class="signoptions" style="display:none;margin-top: 10px;">
+                            <table style="width: 100%;">
+                                <tr>
+                                    <td>
+                                        <a id="clearBtn" href="javascript:ClearCanvas();" class="close-popup button button-big button-fill bg-blue uppercase" style="width:100%; margin: 0 auto;">Re-Sign</a>
+                                    </td>
+                                    <td>
+                                       <a href="javascript:saveQuote();" class="button button-big button-fill bg-blue uppercase btn-with-icon" style="margin: 0 auto;width:70%;">Save Quote</a>       
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div class="signoptions2" style="display:none; margin-top: 10px;">
+                            <table style="width:100%; padding-bottom: 15px;">
+                                <tr>
+                                    <td>
+
+                                        <a href="javascript:Resign();" id="SignBtn" name="SignBtn" class="button button-big button-fill bg-blue uppercase btn-with-icon" style="margin: 0 auto; width:100%;">Re-Sign</a>
+
+                                    </td>
+                                    <td>
+                                        <a href="javascript:saveQuote();" class="button button-big button-fill bg-blue uppercase btn-with-icon" style="margin: 0 auto;width:100%;">Save Quote</a>
+                                    </td>
+                                </tr>
+
+                            </table>
+
+                        </div>
+                        <div class="" style="margin-top: 10px;">
+                            <table style="width:100%; padding-bottom: 15px;">
+                                <tr>
+                                    <td>
+                                        <div class="signoptions"  style="display:none;">
+                                            <a href="javascript:UploadPhoto('FuneralProductSign');" class="close-popup button button-big button-fill bg-pink uppercase btn-with-icon" style="width:100%; margin: 0 auto;">Next</a>
+                                        </div>
+                                        <div class="signoptions2"  style="display:none;">
+                                                <a href="javascript:UploadPhoto('FuneralProductSign2');" class="button button-big button-fill uppercase btn-with-icon" style="margin: 0 auto; width:100%;">Next</a>
+                                        </div>
+
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+     </div>
+</div>
