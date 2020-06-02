@@ -10,7 +10,7 @@
   <content src="index.html" />
 
   <preference name="StatusBarOverlaysWebView" value="false" />
-  <preference name="phonegap-version" value="cli-7.1.0" />
+  <preference name="phonegap-version" value="cli-8.0.0" />
 
   <plugin name="cordova-plugin-whitelist" spec="1.2.2" />
   <access origin="*" />
