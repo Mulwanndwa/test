@@ -1,0 +1,68 @@
+{
+  "_from": "cordova-plugin-card-io@~2.1.1",
+  "_id": "cordova-plugin-card-io@2.1.1",
+  "_inBundle": false,
+  "_integrity": "sha1-U1tcR/3+fZBguIxfcI9qt65FLtM=",
+  "_location": "/cordova-plugin-card-io",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "cordova-plugin-card-io@~2.1.1",
+    "name": "cordova-plugin-card-io",
+    "escapedName": "cordova-plugin-card-io",
+    "rawSpec": "~2.1.1",
+    "saveSpec": null,
+    "fetchSpec": "~2.1.1"
+  },
+  "_requiredBy": [
+    "#DEV:/",
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-card-io/-/cordova-plugin-card-io-2.1.1.tgz",
+  "_shasum": "535b5c47fdfe7d9060b88c5f708f6ab7ae452ed3",
+  "_spec": "cordova-plugin-card-io@~2.1.1",
+  "_where": "C:\\xampp\\htdocs\\ionic-app",
+  "author": {
+    "name": "card.io"
+  },
+  "bugs": {
+    "url": "https://github.com/niconaso/cordova-plugin-card-io/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-card-io",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "deprecated": false,
+  "description": "This plugin allows to add card.io scanning capabilities to your application using card.io SDK Native library",
+  "devDependencies": {
+    "jshint": "^2.6.0"
+  },
+  "directories": {},
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "homepage": "https://github.com/niconaso/cordova-plugin-card-io#readme",
+  "keywords": [
+    "card.io",
+    "sdk",
+    "card-scanning",
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android"
+  ],
+  "license": "MIT License, see LICENSE for details",
+  "name": "cordova-plugin-card-io",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/niconaso/cordova-plugin-card-io.git"
+  },
+  "version": "2.1.1"
+}
