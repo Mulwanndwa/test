@@ -22,8 +22,6 @@
         <allow-intent href="itms-apps:*" />
     </platform>
     <platform name="ios">
-        <allow-intent href="itms:*" />
-        <allow-intent href="itms-apps:*" />
         <icon height="57" src="resources/ios/icon/Icon-57.png" width="57" />
         <icon height="114" src="resources/ios/icon/Icon-114.png" width="114" />
         <icon height="29" src="resources/ios/icon/Icon-29.png" width="29" />
@@ -67,7 +65,6 @@
     <plugin name="cordova-plugin-statusbar" spec="2.4.2" />
     <plugin name="cordova-plugin-device" spec="2.0.2" />
     <plugin name="cordova-plugin-splashscreen" spec="5.0.2" />
-    <plugin name="cordova-plugin-wkwebview-engine" spec="~1.2.1" />
     <plugin name="cordova-plugin-camera" spec="~2.3.0">
         <variable name="CAMERA_USAGE_DESCRIPTION" value="We allow users to upload photos to their profile." />
         <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="We allow vendors to scan QR codes to validate orders." />
