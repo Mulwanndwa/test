@@ -199,7 +199,7 @@ p {
         /*padding: 15px;*/
         /*font-size: 12px;*/
         /* max-width: 300px; */
-        /* background:#fff; */
+        background:#fff;
         min-height: 100px !important;
     }
 .row.no-gutter .col-50 {
@@ -4071,7 +4071,6 @@ html.android-4 .accordion-item-content {
 .card .list-block,
 .card .content-block {
   margin: 0;
-  margin-bottom: 15px;
 }
 .row:not(.no-gutter) .col > .card {
   margin-left: 0;

@@ -84,12 +84,17 @@
             cursor: pointer; /* Add a pointer on hover */
         }
     </style>
-
+   
+    <script src="cordova.js"></script>          <!-- phantom library, needed for Cordova api calls, added during build -->
+    <script src="xdk/init-dev.js"></script>     <!-- normalizes device and document ready events, see README for details -->
 </head>
 <body  style="font-family: 'Oswald', sans-serif;font-size: 18px;">
     <!-- Status bar overlay for fullscreen mode-->
     <div class="custom-preloader" style="display:none"></div>
-    <div class="loader-overlay" style="display:none"></div>
+    <div class="loader-overlay"></div>
+
+    <div class="statusbar-overlay"></div>
+    <div id="overlay"></div>
 
     <div class="panel-overlay"></div>
 
@@ -324,6 +329,38 @@
 
     </script>
 
+    <script type="text/javascript">
+        // function disableF5(e) { if ((e.which || e.keyCode) == 116 || (e.which || e.keyCode) == 82) e.preventDefault(); };
+
+        // $(document).ready(function () {
+        //     //$(document).on("keydown", disableF5);
+
+        // });
+        // window.onbeforeunload = function () {
+        //     return "Are you sure you want to leave?";
+        //     ClearLogin();
+        // }
+        // function checkRefresh() {
+        //     if (document.refreshForm.visited.value == "") {
+        //         // This is a fresh page load
+        //         document.refreshForm.visited.value = "1";
+
+        //         // You may want to add code here special for
+        //         // fresh page loads
+
+        //         console.log("This is a fresh page load")
+        //     }
+        //     else {
+        //         // This is a page refresh
+
+        //         // Insert code here representing what to do on
+        //         // a refresh
+        //         console.log("This is a page refresh")
+        //     }
+        // }
+    </script>
+
+    
     <!--
     <script type="text/javascript" src='assets/signature_pad/example/js/signature_pad.js'></script> -->
     <script type="text/javascript" src='assets/signature_pad/example/js/app.js'></script>
