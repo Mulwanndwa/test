@@ -1,0 +1,7 @@
+{
+  "name": "InsurApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "custom"
+}
