@@ -32,19 +32,11 @@
         "CAMERA_USAGE_DESCRIPTION": "We allow sales agents to scan debit card."
       },
       "cordova-plugin-device": {},
-      "cordova-plugin-statusbar": {},
       "cordova-plugin-inappbrowser": {},
       "cordova-plugin-media": {
         "KEEP_AVAUDIOSESSION_ALWAYS_ACTIVE": "NO"
-      },
-      "cordova-plugin-splashscreen": {},
-      "cordova-plugin-geolocation": {
-        "GEOLOCATION_USAGE_DESCRIPTION": "Need location access to now sales agent location"
       }
     }
   },
-  "devDependencies": {
-    "cordova-plugin-geolocation": "^2.4.3",
-    "cordova-plugin-splashscreen": "^5.0.2"
-  }
+  "devDependencies": {}
 }
