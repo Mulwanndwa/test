@@ -83,11 +83,9 @@ var DependantTypes = [
     "Spouse", "Child", "Relative"
 ];
 
-var appVersion = '2.3.0';
+var appVersion = '2.3.1';
 
 var baseUrl = "https://admin.insurapp.co.za";
-//var baseUrl = "http://demo.insurapp.co.za"; 
-//var baseUrl = "http://insurapp.mr";
 var services = baseUrl + "/api";
 var iconLocation = baseUrl + "/assets/uploads/icons/";
 var audioLocation = baseUrl + "/assets/uploads/insurance/terms_audio/";
@@ -159,20 +157,6 @@ $(document).ajaxComplete(function() {
     $(".modal-overlay").hide();
     myApp.hidePreloader();
 });
-
-// $$(document).on('ajaxStart', function (e) {
-//     $(".loader-overlay").show();
-//     $(".modal-overlay").show();
-//     myApp.showPreloader();
-   
-// });
-// $$(document).on('ajaxComplete', function () {
-//     $(".loader-overlay").hide();
-//     $(".modal-overlay").hide();
-//     myApp.hidePreloader();
-   
-// });
-
 
 
 // The function below is an example of the best way to "start" your app.
