@@ -1,32 +1,26 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <widget defaultlocale="en-US" id="com.spazapp.insuranceapp" version="2.3.3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:vs="http://schemas.microsoft.com/appx/2014/htmlapps">
-  <name>InsurApp</name>
-  <description>A blank project that uses Apache Cordova to help you build an app that targets multiple mobile platforms: Android, iOS, and the Windows Universal Platform.</description>
-  <author email="dev@cordova.apache.org" href="http://cordova.io">Mpho Mulwanndwa</author>
-  <vs:template-name>BlankJS</vs:template-name>
-  <vs:toolsetVersion>6.3.1</vs:toolsetVersion>
-  <engine name="ios" spec="4.2.0" />
-
-  <content src="index.html" />
-
-  <preference name="StatusBarOverlaysWebView" value="false" />
-  <preference name="phonegap-version" value="cli-9.0.0" />
-
-  <plugin name="cordova-plugin-whitelist" spec="1.2.2" />
-  <access origin="*" />
-  <allow-intent href="http://*/*" />
-  <allow-intent href="https://*/*" />
-  <allow-intent href="tel:*" />
-  <allow-intent href="sms:*" />
-  <allow-intent href="mailto:*" />
-  <allow-intent href="geo:*" />
-
-  <platform name="ios">
-    <allow-intent href="itms:*" />
-    <allow-intent href="itms-apps:*" />
-  </platform>
-
-   <platform name="ios">
+    <name>InsurApp</name>
+    <description>A blank project that uses Apache Cordova to help you build an app that targets multiple mobile platforms: Android, iOS, and the Windows Universal Platform.</description>
+    <author email="dev@cordova.apache.org" href="http://cordova.io">Mpho Mulwanndwa</author>
+    <vs:template-name>BlankJS</vs:template-name>
+    <vs:toolsetVersion>6.3.1</vs:toolsetVersion>
+    <content src="index.html" />
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="phonegap-version" value="cli-9.0.0" />
+    <plugin name="cordova-plugin-whitelist" spec="1.2.2" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+    <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
         <icon height="57" src="resources/ios/icon/Icon-57.png" width="57" />
@@ -61,19 +55,19 @@
         <icon height="1024" src="resources/ios/icon/icon-1024.png" width="1024" />
     </platform>
     <platform name="ios">
-      <splash height="1334" src="res/screens/ios/750-1334.png" width="750" />
-      <splash height="2208" src="res/screens/ios/1242-2208.png" width="1242" />
-      <splash height="2732" src="res/screens/ios/1278-2732.png" width="1242" />
-      <splash height="1334" src="res/screens/ios/1334.png" width="1334" />
-      <splash height="2208" src="res/screens/ios/1334.png" width="2208" />
-      <splash height="2732" src="res/screens/ios/2732.png" width="2732" />
+        <splash height="1334" src="res/screens/ios/750-1334.png" width="750" />
+        <splash height="2208" src="res/screens/ios/1242-2208.png" width="1242" />
+        <splash height="2732" src="res/screens/ios/1278-2732.png" width="1242" />
+        <splash height="1334" src="res/screens/ios/1334.png" width="1334" />
+        <splash height="2208" src="res/screens/ios/1334.png" width="2208" />
+        <splash height="2732" src="res/screens/ios/2732.png" width="2732" />
     </platform>
     <platform name="ios">
-      <preference name="WKWebViewOnly" value="true" />
-      <feature name="CDVWKWebViewEngine">
-          <param name="ios-package" value="CDVWKWebViewEngine" />
-      </feature>
-      <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
+        <preference name="WKWebViewOnly" value="true" />
+        <feature name="CDVWKWebViewEngine">
+            <param name="ios-package" value="CDVWKWebViewEngine" />
+        </feature>
+        <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
     </platform>
     <plugin name="cordova-plugin-whitelist" spec="1.3.3" />
     <plugin name="cordova-plugin-statusbar" spec="2.4.2" />
@@ -84,11 +78,10 @@
         <variable name="CAMERA_USAGE_DESCRIPTION" value="We allow users to upload photos to their profile." />
         <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="We allow vendors to scan QR codes to validate orders." />
     </plugin>
-     <plugin name="cordova-plugin-geolocation" spec="~2.4.3">
-         <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="Need location access to now sales agent location" />
+    <plugin name="cordova-plugin-geolocation" spec="~2.4.3">
+        <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="Need location access to now sales agent location" />
     </plugin>
     <plugin name="cordova-plugin-card-io" spec="~2.1.1" src="https://github.com/niconaso/cordova-plugin-card-io.git">
         <variable name="CAMERA_USAGE_DESCRIPTION" value="We allow sales agents to scan debit card." />
     </plugin>
- 
 </widget>

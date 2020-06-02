@@ -38,10 +38,14 @@
         "KEEP_AVAUDIOSESSION_ALWAYS_ACTIVE": "NO"
       },
       "cordova-plugin-splashscreen": {},
-      "cordova-plugin-ionic-webview": {}
+      "cordova-plugin-ionic-webview": {},
+      "cordova-plugin-geolocation": {
+        "GEOLOCATION_USAGE_DESCRIPTION": "Need location access to now sales agent location"
+      }
     }
   },
   "devDependencies": {
+    "cordova-plugin-geolocation": "^2.4.3",
     "cordova-plugin-ionic-webview": "^4.2.1",
     "cordova-plugin-splashscreen": "^5.0.2"
   }
