@@ -25,8 +25,7 @@
       "cordova-plugin-statusbar": {},
       "cordova-plugin-keyboard": {},
       "cordova-plugin-inappbrowser": {},
-      "cordova-plugin-media": {},
-      "cordova-plugin-wkwebview-engine": {}
+      "cordova-plugin-media": {}
     }
   },
   "devDependencies": { }
