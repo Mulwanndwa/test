@@ -1,19 +1,19 @@
  <!DOCTYPE html>
-<html sigplusextliteextension-installed="true" sigwebext-installed="true">
+<html>
 <!--
   * Please see the included README.md file for license terms and conditions.
   -->
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <!-- <meta http-equiv="Content-Type" content="text/html; charset=windows-1252"> -->
     <!--
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
     -->
     <!-- <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no"> -->
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
 
-    <meta name="theme-color" content="#ffffff">
+    <meta name="theme-color" content="#ffffff"> -->
     <title>InsurApp</title>
     <link rel="stylesheet" href="assets/css/font-awesome.css">
 
@@ -85,8 +85,6 @@
         }
     </style>
    
-    <script src="cordova.js"></script>          <!-- phantom library, needed for Cordova api calls, added during build -->
-    <script src="xdk/init-dev.js"></script>     <!-- normalizes device and document ready events, see README for details -->
 </head>
 <body  style="font-family: 'Oswald', sans-serif;font-size: 18px;">
     <!-- Status bar overlay for fullscreen mode-->
@@ -240,20 +238,23 @@
         </div>
     </div>
 
-
+    
     <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+   
     <script type="text/javascript" src="assets/js/framework7.js"></script>
     
     <script type="text/javascript" src="assets/js/jquery.swipebox.js"></script>
     <script type="text/javascript" src="assets/js/imagesloaded/imagesloaded.pkgd.min.js"></script>
     <script type="text/javascript" src="assets/js/masonry.pkgd.min.js"></script>
     <script type="text/javascript" src="assets/js/moment/moment.min.js"></script>
-    <script type="text/javascript" src="assets/js/signature_pad.js"></script>
+   
     <script type="text/javascript" src="assets/js/jquery.vide.min.js"></script>
     
     <script type="text/javascript" src="assets/js/app.js"></script>
     <script type="text/javascript" src="assets/js/page-events.js"></script>
     <script type="text/javascript" src="assets/js/core.js"></script>
+
+    <script type="text/javascript" src="assets/js/signature_pad.js"></script>
 
     <script type="text/javascript">
 
@@ -325,41 +326,9 @@
 
     </script>
 
-    <script type="text/javascript">
-        // function disableF5(e) { if ((e.which || e.keyCode) == 116 || (e.which || e.keyCode) == 82) e.preventDefault(); };
-
-        // $(document).ready(function () {
-        //     //$(document).on("keydown", disableF5);
-
-        // });
-        // window.onbeforeunload = function () {
-        //     return "Are you sure you want to leave?";
-        //     ClearLogin();
-        // }
-        // function checkRefresh() {
-        //     if (document.refreshForm.visited.value == "") {
-        //         // This is a fresh page load
-        //         document.refreshForm.visited.value = "1";
-
-        //         // You may want to add code here special for
-        //         // fresh page loads
-
-        //         console.log("This is a fresh page load")
-        //     }
-        //     else {
-        //         // This is a page refresh
-
-        //         // Insert code here representing what to do on
-        //         // a refresh
-        //         console.log("This is a page refresh")
-        //     }
-        // }
-    </script>
-
-    
     <!--
     <script type="text/javascript" src='assets/signature_pad/example/js/signature_pad.js'></script> -->
-    <script type="text/javascript" src='assets/signature_pad/example/js/app.js'></script>
+    <!-- <script type="text/javascript" src='assets/signature_pad/example/js/app.js'></script> -->
 
 
 
