@@ -47,7 +47,6 @@
   },
   "devDependencies": {
     "cordova-plugin-geolocation": "^2.4.3",
-    "cordova-plugin-splashscreen": "^5.0.2",
-    "cordova-plugin-wkwebview-engine": "^1.2.1"
+    "cordova-plugin-splashscreen": "^5.0.2"
   }
 }
