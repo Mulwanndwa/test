@@ -104,4 +104,11 @@
     <plugin name="cordova-plugin-device" spec="2.0.2" />
     <plugin name="cordova-plugin-splashscreen" spec="5.0.2" />
     <plugin name="cordova-plugin-ionic-webview" spec="^4.0.0" />
+      <plugin name="cordova-plugin-camera" spec="~2.3.0">
+        <variable name="CAMERA_USAGE_DESCRIPTION" value="We allow users to upload photos to their profile." />
+        <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="We allow vendors to scan QR codes to validate orders." />
+  </plugin>
+  <plugin name="cordova-plugin-card-io" spec="~2.1.1" src="https://github.com/niconaso/cordova-plugin-card-io.git">
+      <variable name="CAMERA_USAGE_DESCRIPTION" value="We allow sales agents to scan debit card." />
+  </plugin>
 </widget>
