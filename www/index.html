@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html sigplusextliteextension-installed="true" sigwebext-installed="true">
+<html>
 <!--
   * Please see the included README.md file for license terms and conditions.
   -->
@@ -26,69 +26,10 @@
     <link rel="stylesheet" href="assets/css/circle.css">
     <link rel="stylesheet" href="assets/css/my-app.css">
     
-
-    <style>
-        .cordova-camera-capture {
-            position: fixed !important;
-            z-index: 2147483647;
-            text-align: center;
-            height: 400px;
-            top: 40px;
-            background: #000 !important;
-            /* margin-left: 10%; */
-            /* margin-left: 50px; */
-            /* margin-right: 50%; */
-            align-content: center;
-            align-self: center;
-        }
-
-        .cordova-camera-capture {
-        }
-
-        video {
-            margin: 0;
-            padding: 0;
-            border: 0;
-            vertical-align: baseline;
-            font: inherit;
-            font-size: 100%;
-            width: 100%;
-        }
-
-        video {
-            margin: 0;
-            padding: 0;
-            border: 0;
-            vertical-align: baseline;
-            font: inherit;
-            font-size: 100%;
-            /*width: 100%;*/
-        }
-
-        button {
-            color: #fff;
-            background: #57c8e1;
-            border-color: transparent;
-        }
-        #overlay {
-            position: fixed; /* Sit on top of the page content */
-            
-            width: 100%; /* Full width (cover the whole page) */
-            height: 100%; /* Full height (cover the whole page) */
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0,0,0,0.5); /* Black background with opacity */
-            z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-            cursor: pointer; /* Add a pointer on hover */
-        }
-    </style>
-   
     <script src="cordova.js"></script>          <!-- phantom library, needed for Cordova api calls, added during build -->
     <script src="xdk/init-dev.js"></script>     <!-- normalizes device and document ready events, see README for details -->
 </head>
-<body onLoad="JavaScript:checkRefresh();" style="font-family: 'Oswald', sans-serif;font-size: 18px;">
+<body style="font-family: 'Oswald', sans-serif;font-size: 18px;">
    
 
     <div class="statusbar-overlay"></div>
