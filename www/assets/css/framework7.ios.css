@@ -199,8 +199,14 @@ p {
         /*padding: 15px;*/
         /*font-size: 12px;*/
         /* max-width: 300px; */
-        background:#fff;
+        /* background:#fff; */
         min-height: 100px !important;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        font-size: 14px;
     }
 .row.no-gutter .col-50 {
   width: 50%;
@@ -209,6 +215,12 @@ p {
   width: 45%;
   width: -webkit-calc((100% - 15px*1.2222222222222223) / 2.2222222222222223);
   width: calc((100% - 15px*1.2222222222222223) / 2.2222222222222223);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  font-size: 14px;
 }
 .row.no-gutter .col-45 {
   width: 45%;
