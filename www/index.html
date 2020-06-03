@@ -21,16 +21,18 @@
     <meta name="msapplication-tap-highlight" content="no">
 
     <!-- Your app title -->
-    <title>My App</title>
+    <title>InsurApp</title>
 
-    <!-- This template defaults to the iOS CSS theme. To support both iOS and material design themes, see the Framework7 Tutorial at the link below:
-        http://www.idangero.us/framework7/tutorials/maintain-both-ios-and-material-themes-in-single-app.html
-     -->
+    <link rel="stylesheet" href="assets/css/font-awesome.css">
 
-    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
-    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
+    <link rel="stylesheet" href="assets/fonts/Montserrat-Regular/styles.css">
+    <link rel="stylesheet" href="assets/fonts/Montserrat-Bold/styles.css">
+    <link rel="stylesheet" href="assets/fonts/AppIcons/style.css">
 
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="assets/css/framework7.ios.css">
+
+    <link rel="stylesheet" href="assets/css/circle.css">
+    <link rel="stylesheet" href="assets/css/my-app.css">
 </head>
 
 <body>
@@ -39,59 +41,234 @@
 
     <!-- Panels overlay-->
     <div class="panel-overlay"></div>
-    <!-- Left panel with reveal effect-->
+    <div class="panel-overlay"></div>
+
+    <!-- Left panel -->
     <div class="panel panel-left panel-reveal">
-        <div class="content-block">
-            <p>Left panel content goes here</p>
-        </div>
-    </div>
 
-    <!-- Views -->
-    <div class="views">
-        <!-- Your main view, should have "view-main" class -->
-        <div class="view view-main">
-            <!-- Top Navbar-->
-            <div class="navbar">
-                <div class="navbar-inner">
-                    <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-                    <div class="center sliding">Awesome App</div>
-                    <div class="right">
-                        <!--
-                          Right link contains only icon - additional "icon-only" class
-                          Additional "open-panel" class tells app to open panel when we click on this link
-                        -->
-                        <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
-                    </div>
-                </div>
-            </div>
-            <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
-            <div class="pages navbar-through toolbar-through">
-                <!-- Page, "data-page" contains page name -->
-                <div data-page="index" class="page">
-                    <!-- Scrollable page content -->
-                    <div class="page-content">
-                        <div class="content-block">
-                            <p>Page content goes here</p>
-                            <!-- Link to another page -->
-                            <a href="about.html">About app</a>
+        <div class="content-block-title"><span class="User_FullName">Name</span> <a href="#" class="close-panel text-purple" style="float:right;"><i class="fa fa-times"></i></a></div>
+        <div class="content-block" style="margin-bottom: 15px;">
+            <p class="">Choose from one of the options below.</p>
+        </div>
+        <div class="list-block" style="margin-top: 0px;">
+            <ul>
+                <li>
+                    <a href="landing.html" class="item-link close-panel">
+                        <div class="item-content">
+                            <div class="item-media"><i class="fa fa-home" style=" color: #29788b;"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">Home</div>
+                            </div>
                         </div>
+                    </a>
+                </li>
+
+                <span class="product-cats"></span>
+
+                <li>
+                    <a href="search.html" class="item-link close-panel">
+                        <div class="item-content">
+                            <div class="item-media"><i class="fa fa-search" style=" color: #29788b;"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">Search</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="javascript:gotClaim();" class="item-link close-panel">
+                        <div class="item-content">
+                            <div class="item-media"><i class="fa fa-clone" style=" color: #29788b;"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">Submit Claim</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <!--<li>
+                    <a href="wallet.html" class="item-link close-panel">
+                        <div class="item-content">
+                            <div class="item-media"><i class="fa fa-credit-card"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">Wallet</div>
+                            </div>
+                        </div>
+                    </a>
+                </li> -->
+                <li>
+                    <a href="support_manage_cards.html" class="item-link close-panel">
+                        <div class="item-content">
+                            <div class="item-media"><i class="fa fa-credit-card" style=" color: #29788b;"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">Manage Cards</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="cashout.html" class="item-link close-panel">
+                        <div class="item-content">
+                            <div class="item-media"><i class="fa fa-money" style=" color: #29788b;"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">Cashout</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <!--
+                <li>
+                    <a href="customer_manage_cards.html" class="item-link close-panel">
+                        <div class="item-content">
+                            <div class="item-media"><i class="fa fa-credit-card" style=" color: #29788b;"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">Manage Customer Cards</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                    -->
+                <li>
+                    <a href="savelead.html" class="item-link close-panel">
+                        <div class="item-content">
+                            <div class="item-media"><i class="fa fa-save" style=" color: #29788b;"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">Save Lead</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="profile.html" class="item-link close-panel">
+                        <div class="item-content">
+                            <div class="item-media"><i class="fa fa-user" style=" color: #29788b;"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">Change Password</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <!--<li>
+                    <a href="support.html" class="item-link close-panel">
+                        <div class="item-content">
+                            <div class="item-media"><i class="fa fa-cog" style=" color: #29788b;"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">Support</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>-->
+                <li>
+                    <a href="javascript:ClearLogin();" class="item-link close-panel">
+                        <div class="item-content">
+                            <div class="item-media"><i class="fa fa-lock" style=" color: #29788b;"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">Logout</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <p class="appversion text-center"></p>
+    </div>
+    <!-- Views-->
+    <div class="views ">
+        <!-- Your main view, should have "view-main" class-->
+        <div class="view view-main">
+            <div class="pages navbar-fixed toolbar-fixed">
+                <div data-page="index" class="page">
+                    <!--   <div class="videoloader">
+
+                      </div> -->
+                    <div style="text-align:center;padding-top: 120%;">
+                        <i class="fa fa-cog fa-spin fa-3x fa-fw text-white"></i>
                     </div>
-                </div>
-            </div>
-            <!-- Bottom Toolbar-->
-            <div class="toolbar">
-                <div class="toolbar-inner">
-                    <!-- Toolbar links -->
-                    <a href="#" class="link">Link 1</a>
-                    <a href="#" class="link">Link 2</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
-    <script type="text/javascript" src="js/my-app.js"></script>
+
+    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/framework7.js"></script>
+    
+    <script type="text/javascript" src="assets/js/jquery.swipebox.js"></script>
+    <script type="text/javascript" src="assets/js/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script type="text/javascript" src="assets/js/masonry.pkgd.min.js"></script>
+    <script type="text/javascript" src="assets/js/moment/moment.min.js"></script>
+    <script type="text/javascript" src="assets/js/signature_pad.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.vide.min.js"></script>
+    
+    <script type="text/javascript" src="assets/js/app.js"></script>
+    <script type="text/javascript" src="assets/js/page-events.js"></script>
+    <script type="text/javascript" src="assets/js/core.js"></script>
+
+    <script type="text/javascript">
+
+        var imgWidth;
+        var imgHeight;
+        function StartSign() {
+            var isInstalled = document.documentElement.getAttribute('SigPlusExtLiteExtension-installed');
+            console.log("isInstalled: " + isInstalled);
+            if (!isInstalled) {
+                myApp.alert("SigPlusExtLite extension is either not installed or disabled. Please install or enable extension.");
+                return;
+            }
+            var canvasObj = document.getElementById('canvasSignature');
+            canvasObj.getContext('2d').clearRect(0, 0, canvasObj.width, canvasObj.height);
+            imgWidth = canvasObj.width;
+            imgHeight = canvasObj.height;
+            var message = { "firstName": "", "lastName": "", "eMail": "", "location": "", "imageFormat": 1, "imageX": imgWidth, "imageY": imgHeight, "imageTransparency": false, "imageScaling": false, "maxUpScalePercent": 0.0, "rawDataFormat": "ENC", "minSigPoints": 25 };
+
+            top.document.addEventListener('SignResponse', SignResponse, false);
+            var messageData = JSON.stringify(message);
+            var element = document.createElement("MyExtensionDataElement");
+            element.setAttribute("messageAttribute", messageData);
+            document.documentElement.appendChild(element);
+            var evt = document.createEvent("Events");
+            evt.initEvent("SignStartEvent", true, false);
+            element.dispatchEvent(evt);
+        }
+        function SignResponse(event) {
+            var str = event.target.getAttribute("msgAttribute");
+            var obj = JSON.parse(str);
+            SetValues(obj, imgWidth, imgHeight);
+        }
+        function SetValues(objResponse, imageWidth, imageHeight) {
+            var obj = null;
+            if (typeof (objResponse) === 'string') {
+                obj = JSON.parse(objResponse);
+            } else {
+                obj = JSON.parse(JSON.stringify(objResponse));
+            }
+
+            var ctx = document.getElementById('canvasSignature').getContext('2d');
+
+            if (obj.errorMsg != null && obj.errorMsg != "" && obj.errorMsg != "undefined") {
+                myApp.alert(obj.errorMsg, function () {
+                    $(".signoptions2").show();
+                });
+            } else {
+                if (obj.isSigned) {
+                    var img = new Image();
+                    img.onload = function () {
+                        ctx.drawImage(img, 0, 0, imageWidth, imageHeight);
+                    }
+                    img.src = "data:image/png;base64," + obj.imageData;
+                    $(".signoptions").show();
+                } else {
+                    $(".signoptions2").show();
+                }
+            }
+        }
+        function ClearFormData() {
+            document.getElementById('SignBtn').disabled = false;
+        }
+
+    </script>
+
+    <script type="text/javascript" src='assets/signature_pad/example/js/app.js'></script>
 </body>
 
 </html>

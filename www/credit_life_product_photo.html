@@ -1,0 +1,52 @@
+<div class="pages navbar-fixed toolbar-fixed">
+    <div data-page="credit_life_product_photo" class="page">
+        <div class="navbar">
+            <div class="navbar-inner"> 
+                <div class="left">
+                    <a href="#" class="link icon-only text-pink home">
+                        <span class="fa fa-home"></span>
+                    </a>
+                </div>
+                <div class="center sliding Montserrat-Regular uppercase"><img src="assets/img/logo-top-badge-only.png" style="height: 30px;" /> &nbsp;&nbsp;FUNERAL COVER</div>
+                <div class="right">
+                    
+                </div>
+            </div>
+        </div>
+        
+            <div class="page-content" style="padding-bottom:0px;">
+                
+                <div class="lightbluearea purple">
+                    <div class="padded">
+                        
+                        <div class="Montserrat-Bold text-white pb5 text-center" id="FuneralProductPhoto_Name"></div>
+                        <div class="Montserrat-Regular text-white text-center" id="FuneralProductPhoto_PolicyNumber"></div>
+                        <br />
+                    </div>
+                </div>
+                <form id="FuneralCoverStep3Form">
+                    
+                <div class="content-block-title text-purple text-center Montserrat-Bold">Take a photo</div>                
+                                        
+                    <div class="content-block">
+                        <p class="text-center">Take a photo of the client with the terms and conditions flyer</p>
+                        <a href="javascript:TakePhoto('#FuneralProductPhoto_PhotoDisplay');" class="close-popup button button-big button-fill bg-blue uppercase">Take Photo</a>
+                        <br /><br />
+                        <img src="" id="FuneralProductPhoto_PhotoDisplay" style="display:none;width: 100%;" />
+                    </div>
+                    
+                </form>    
+
+                <div class="content-block">
+                    <div class="row">
+                        <div class="col-50">
+                            <a href="funeral_product_terms.html" class="close-popup button button-big button-fill bg-blue uppercase">Back</a>
+                        </div>
+                        <div class="col-50" id="FuneralProductPhoto_NextButton" style="display:none;">
+                            <a href="javascript:UploadPhoto('FuneralProductPhoto');" class="close-popup button button-big button-fill bg-purple uppercase">Next</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
