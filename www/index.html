@@ -10,7 +10,7 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *"> -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
 
     <!-- Required meta tags-->
     <meta charset="utf-8">
@@ -21,7 +21,7 @@
     <meta name="msapplication-tap-highlight" content="no">
 
     <!-- Your app title -->
-    <title>InsurApp</title>
+    <title>My App</title>
 
     <!-- This template defaults to the iOS CSS theme. To support both iOS and material design themes, see the Framework7 Tutorial at the link below:
         http://www.idangero.us/framework7/tutorials/maintain-both-ios-and-material-themes-in-single-app.html
@@ -31,16 +31,6 @@
     <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
 
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="assets/css/font-awesome.css">
-
-    <link rel="stylesheet" href="assets/fonts/Montserrat-Regular/styles.css">
-    <link rel="stylesheet" href="assets/fonts/Montserrat-Bold/styles.css">
-    <link rel="stylesheet" href="assets/fonts/AppIcons/style.css">
-
-    <link rel="stylesheet" href="assets/css/framework7.ios.css">
-
-    <link rel="stylesheet" href="assets/css/circle.css">
-    <link rel="stylesheet" href="assets/css/my-app.css">
 </head>
 
 <body>
@@ -51,166 +41,57 @@
     <div class="panel-overlay"></div>
     <!-- Left panel with reveal effect-->
     <div class="panel panel-left panel-reveal">
-
-        <div class="content-block-title"><span class="User_FullName">Name</span> <a href="#" class="close-panel text-purple" style="float:right;"><i class="fa fa-times"></i></a></div>
-        <div class="content-block" style="margin-bottom: 15px;">
-            <p class="">Choose from one of the options below.</p>
+        <div class="content-block">
+            <p>Left panel content goes here</p>
         </div>
-        <div class="list-block" style="margin-top: 0px;">
-            <ul>
-                <li>
-                    <a href="landing.html" class="item-link close-panel">
-                        <div class="item-content">
-                            <div class="item-media"><i class="fa fa-home" style=" color: #29788b;"></i></div>
-                            <div class="item-inner">
-                                <div class="item-title">Home</div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-
-                <span class="product-cats"></span>
-
-                <li>
-                    <a href="search.html" class="item-link close-panel">
-                        <div class="item-content">
-                            <div class="item-media"><i class="fa fa-search" style=" color: #29788b;"></i></div>
-                            <div class="item-inner">
-                                <div class="item-title">Search</div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="javascript:gotClaim();" class="item-link close-panel">
-                        <div class="item-content">
-                            <div class="item-media"><i class="fa fa-clone" style=" color: #29788b;"></i></div>
-                            <div class="item-inner">
-                                <div class="item-title">Submit Claim</div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <!--<li>
-                    <a href="wallet.html" class="item-link close-panel">
-                        <div class="item-content">
-                            <div class="item-media"><i class="fa fa-credit-card"></i></div>
-                            <div class="item-inner">
-                                <div class="item-title">Wallet</div>
-                            </div>
-                        </div>
-                    </a>
-                </li> -->
-                <li>
-                    <a href="support_manage_cards.html" class="item-link close-panel">
-                        <div class="item-content">
-                            <div class="item-media"><i class="fa fa-credit-card" style=" color: #29788b;"></i></div>
-                            <div class="item-inner">
-                                <div class="item-title">Manage Cards</div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="cashout.html" class="item-link close-panel">
-                        <div class="item-content">
-                            <div class="item-media"><i class="fa fa-money" style=" color: #29788b;"></i></div>
-                            <div class="item-inner">
-                                <div class="item-title">Cashout</div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <!--
-                <li>
-                    <a href="customer_manage_cards.html" class="item-link close-panel">
-                        <div class="item-content">
-                            <div class="item-media"><i class="fa fa-credit-card" style=" color: #29788b;"></i></div>
-                            <div class="item-inner">
-                                <div class="item-title">Manage Customer Cards</div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                    -->
-                <li>
-                    <a href="savelead.html" class="item-link close-panel">
-                        <div class="item-content">
-                            <div class="item-media"><i class="fa fa-save" style=" color: #29788b;"></i></div>
-                            <div class="item-inner">
-                                <div class="item-title">Save Lead</div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="profile.html" class="item-link close-panel">
-                        <div class="item-content">
-                            <div class="item-media"><i class="fa fa-user" style=" color: #29788b;"></i></div>
-                            <div class="item-inner">
-                                <div class="item-title">Change Password</div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <!--<li>
-                    <a href="support.html" class="item-link close-panel">
-                        <div class="item-content">
-                            <div class="item-media"><i class="fa fa-cog" style=" color: #29788b;"></i></div>
-                            <div class="item-inner">
-                                <div class="item-title">Support</div>
-                            </div>
-                        </div>
-                    </a>
-                </li>-->
-                <li>
-                    <a href="javascript:ClearLogin();" class="item-link close-panel">
-                        <div class="item-content">
-                            <div class="item-media"><i class="fa fa-lock" style=" color: #29788b;"></i></div>
-                            <div class="item-inner">
-                                <div class="item-title">Logout</div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <p class="appversion text-center"></p>
     </div>
-    <!-- Views-->
-    <div class="views ">
-        <!-- Your main view, should have "view-main" class-->
-        <div class="view view-main">
-            <div class="pages navbar-fixed toolbar-fixed">
-                <div data-page="index" class="page">
-                    <!--   <div class="videoloader">
 
-                      </div> -->
-                    <div style="text-align:center;padding-top: 120%;">
-                        <i class="fa fa-cog fa-spin fa-3x fa-fw text-white"></i>
+    <!-- Views -->
+    <div class="views">
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main">
+            <!-- Top Navbar-->
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
+                    <div class="center sliding">Awesome App</div>
+                    <div class="right">
+                        <!--
+                          Right link contains only icon - additional "icon-only" class
+                          Additional "open-panel" class tells app to open panel when we click on this link
+                        -->
+                        <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
                     </div>
+                </div>
+            </div>
+            <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+            <div class="pages navbar-through toolbar-through">
+                <!-- Page, "data-page" contains page name -->
+                <div data-page="index" class="page">
+                    <!-- Scrollable page content -->
+                    <div class="page-content">
+                        <div class="content-block">
+                            <p>Page content goes here</p>
+                            <!-- Link to another page -->
+                            <a href="about.html">About app</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bottom Toolbar-->
+            <div class="toolbar">
+                <div class="toolbar-inner">
+                    <!-- Toolbar links -->
+                    <a href="#" class="link">Link 1</a>
+                    <a href="#" class="link">Link 2</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
-    <script type="text/javascript" src="assets/js/framework7.js"></script>
-
-    <script type="text/javascript" src="assets/js/jquery.swipebox.js"></script>
-    <script type="text/javascript" src="assets/js/imagesloaded/imagesloaded.pkgd.min.js"></script>
-    <script type="text/javascript" src="assets/js/masonry.pkgd.min.js"></script>
-    <script type="text/javascript" src="assets/js/moment/moment.min.js"></script>
-    <script type="text/javascript" src="assets/js/signature_pad.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.vide.min.js"></script>
-    
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
-
-    <script type="text/javascript" src="assets/js/app.js"></script>
-    <script type="text/javascript" src="assets/js/page-events.js"></script>
-    <script type="text/javascript" src="assets/js/core.js"></script>
+    <script type="text/javascript" src="js/my-app.js"></script>
 </body>
 
 </html>
