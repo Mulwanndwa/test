@@ -3389,34 +3389,33 @@ function LoadFuneralPayScreen() {
         if(result.success) {             
             
             Wallet = result.data.wallets;
-            
-            for(var i = 0; i < result.data.payment_options.length; i++) {
-                html += '<li style="border-bottom:solid thin #ddd;">';
-                html += '  <a href="javascript:SelectPaymentMethod(\'' + result.data.payment_options[i].key + '\', \'funeral\');" class="item-link item-content">';
-                html += '    <div class="item-inner">';
-                html += '      <div class="item-title" style="margin: 0 auto;">' + result.data.payment_options[i].name + '</div>';
-                html += '    </div>';
-                html += '  </a>';
-                html += '</li>';
+            if(result.data){
+                for(var i = 0; i < result.data.payment_options.length; i++) {
+                    html += '<li style="border-bottom:solid thin #ddd;">';
+                    html += '  <a href="javascript:SelectPaymentMethod(\'' + result.data.payment_options[i].key + '\', \'funeral\');" class="item-link item-content">';
+                    html += '    <div class="item-inner">';
+                    html += '      <div class="item-title" style="margin: 0 auto;">' + result.data.payment_options[i].name + '</div>';
+                    html += '    </div>';
+                    html += '  </a>';
+                    html += '</li>';
+                }
+                $("#FuneralProductPay_Existing").html(html);
+            }else{
+                myApp.alert(result.message)
             }
-
-           /* html += '<li>';
-            html += '  <a href="javascript:SelectPaymentMethod(\'pay_now\', \'funeral\');" class="item-link item-content">';
-            html += '    <div class="item-inner">';
-            html += '      <div class="item-title" style="margin: 0 auto;">Pay Now</div>';
-            html += '    </div>';
-            html += '  </a>';
-            html += '</li>';*/
-
-            $("#FuneralProductPay_Existing").html(html);
+           
             
         }
         else {
+            $(".modal-overlay").hide();
+            myApp.hidePreloader();
             CheckReturnMessage(result.message);
         }   
     },
     function (value) {
-
+        myApp.alert("This user does not have permission to sell insurance.")
+        $(".modal-overlay").hide();
+        myApp.hidePreloader();
     });
     
 }
