@@ -10,7 +10,7 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *"> -->
 
     <!-- Required meta tags-->
     <meta charset="utf-8">
@@ -23,6 +23,14 @@
     <!-- Your app title -->
     <title>InsurApp</title>
 
+    <!-- This template defaults to the iOS CSS theme. To support both iOS and material design themes, see the Framework7 Tutorial at the link below:
+        http://www.idangero.us/framework7/tutorials/maintain-both-ios-and-material-themes-in-single-app.html
+     -->
+
+    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
+
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="assets/css/font-awesome.css">
 
     <link rel="stylesheet" href="assets/fonts/Montserrat-Regular/styles.css">
@@ -41,9 +49,7 @@
 
     <!-- Panels overlay-->
     <div class="panel-overlay"></div>
-    <div class="panel-overlay"></div>
-
-    <!-- Left panel -->
+    <!-- Left panel with reveal effect-->
     <div class="panel panel-left panel-reveal">
 
         <div class="content-block-title"><span class="User_FullName">Name</span> <a href="#" class="close-panel text-purple" style="float:right;"><i class="fa fa-times"></i></a></div>
@@ -189,10 +195,9 @@
         </div>
     </div>
 
-
     <script type="text/javascript" src="assets/js/jquery.min.js"></script>
     <script type="text/javascript" src="assets/js/framework7.js"></script>
-    
+
     <script type="text/javascript" src="assets/js/jquery.swipebox.js"></script>
     <script type="text/javascript" src="assets/js/imagesloaded/imagesloaded.pkgd.min.js"></script>
     <script type="text/javascript" src="assets/js/masonry.pkgd.min.js"></script>
@@ -200,75 +205,12 @@
     <script type="text/javascript" src="assets/js/signature_pad.js"></script>
     <script type="text/javascript" src="assets/js/jquery.vide.min.js"></script>
     
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
+
     <script type="text/javascript" src="assets/js/app.js"></script>
     <script type="text/javascript" src="assets/js/page-events.js"></script>
     <script type="text/javascript" src="assets/js/core.js"></script>
-
-    <script type="text/javascript">
-
-        var imgWidth;
-        var imgHeight;
-        function StartSign() {
-            var isInstalled = document.documentElement.getAttribute('SigPlusExtLiteExtension-installed');
-            console.log("isInstalled: " + isInstalled);
-            if (!isInstalled) {
-                myApp.alert("SigPlusExtLite extension is either not installed or disabled. Please install or enable extension.");
-                return;
-            }
-            var canvasObj = document.getElementById('canvasSignature');
-            canvasObj.getContext('2d').clearRect(0, 0, canvasObj.width, canvasObj.height);
-            imgWidth = canvasObj.width;
-            imgHeight = canvasObj.height;
-            var message = { "firstName": "", "lastName": "", "eMail": "", "location": "", "imageFormat": 1, "imageX": imgWidth, "imageY": imgHeight, "imageTransparency": false, "imageScaling": false, "maxUpScalePercent": 0.0, "rawDataFormat": "ENC", "minSigPoints": 25 };
-
-            top.document.addEventListener('SignResponse', SignResponse, false);
-            var messageData = JSON.stringify(message);
-            var element = document.createElement("MyExtensionDataElement");
-            element.setAttribute("messageAttribute", messageData);
-            document.documentElement.appendChild(element);
-            var evt = document.createEvent("Events");
-            evt.initEvent("SignStartEvent", true, false);
-            element.dispatchEvent(evt);
-        }
-        function SignResponse(event) {
-            var str = event.target.getAttribute("msgAttribute");
-            var obj = JSON.parse(str);
-            SetValues(obj, imgWidth, imgHeight);
-        }
-        function SetValues(objResponse, imageWidth, imageHeight) {
-            var obj = null;
-            if (typeof (objResponse) === 'string') {
-                obj = JSON.parse(objResponse);
-            } else {
-                obj = JSON.parse(JSON.stringify(objResponse));
-            }
-
-            var ctx = document.getElementById('canvasSignature').getContext('2d');
-
-            if (obj.errorMsg != null && obj.errorMsg != "" && obj.errorMsg != "undefined") {
-                myApp.alert(obj.errorMsg, function () {
-                    $(".signoptions2").show();
-                });
-            } else {
-                if (obj.isSigned) {
-                    var img = new Image();
-                    img.onload = function () {
-                        ctx.drawImage(img, 0, 0, imageWidth, imageHeight);
-                    }
-                    img.src = "data:image/png;base64," + obj.imageData;
-                    $(".signoptions").show();
-                } else {
-                    $(".signoptions2").show();
-                }
-            }
-        }
-        function ClearFormData() {
-            document.getElementById('SignBtn').disabled = false;
-        }
-
-    </script>
-
-    <script type="text/javascript" src='assets/signature_pad/example/js/app.js'></script>
 </body>
 
 </html>

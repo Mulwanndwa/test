@@ -12,7 +12,12 @@
       "cordova-plugin-statusbar": {},
       "cordova-plugin-device": {},
       "cordova-plugin-splashscreen": {},
-      "cordova-plugin-ionic-webview": {}
+      "cordova-plugin-ionic-webview": {},
+      "cordova-plugin-inappbrowser": {},
+      "cordova-plugin-media": {},
+      "cordova-plugin-file": {},
+      "cordova-plugin-camera": {},
+      "cordova-plugin-card-io": {}
     },
     "platforms": [
       "ios"
