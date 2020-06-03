@@ -83,7 +83,7 @@ var DependantTypes = [
     "Spouse", "Child", "Relative"
 ];
 
-var appVersion = '2.5.1';
+var appVersion = '2.5.2';
 
 var baseUrl = "https://admin.insurapp.co.za";
 //var baseUrl = "http://demo.insurapp.co.za"; 

@@ -3389,7 +3389,7 @@ function LoadFuneralPayScreen() {
         if(result.success) {             
             
             Wallet = result.data.wallets;
-            if(result.data){
+            if(result.data.length > 0){
                 for(var i = 0; i < result.data.payment_options.length; i++) {
                     html += '<li style="border-bottom:solid thin #ddd;">';
                     html += '  <a href="javascript:SelectPaymentMethod(\'' + result.data.payment_options[i].key + '\', \'funeral\');" class="item-link item-content">';
