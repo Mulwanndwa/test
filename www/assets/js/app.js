@@ -145,8 +145,6 @@ if(localStorage.getItem("User")!=null){
 $(document).ajaxStart(function() {
     $(".loaderText").html('Please wait...')
     if(ShowLoader){
-        
-        $(".loader-overlay").show();
         $(".modal-overlay").show();
         myApp.showPreloader();
     }
@@ -155,25 +153,9 @@ $(document).ajaxStart(function() {
 
 $(document).ajaxComplete(function() {
     $(".loaderText").html('')
-    $(".loader-overlay").hide();
     $(".modal-overlay").hide();
     myApp.hidePreloader();
 });
-
-// $$(document).on('ajaxStart', function (e) {
-//     $(".loader-overlay").show();
-//     $(".modal-overlay").show();
-//     myApp.showPreloader();
-   
-// });
-// $$(document).on('ajaxComplete', function () {
-//     $(".loader-overlay").hide();
-//     $(".modal-overlay").hide();
-//     myApp.hidePreloader();
-   
-// });
-
-
 
 // The function below is an example of the best way to "start" your app.
 // This example is calling the standard Cordova "hide splashscreen" function. 
@@ -181,65 +163,62 @@ $(document).ajaxComplete(function() {
 // by the same event or other events.
 
 function onAppReady() {
-    // console.log("app is ready...")
-    // StatusBar.backgroundColorByName("red");
-    // User = JSON.parse(localStorage.getItem("User")); 
     myApp.showPreloader('Please wait...');
     window.setTimeout(function () {
         myApp.hidePreloader();
         mainView.router.loadPage('login.html')
     },300)
-    handleExternalURLs()
+    //handleExternalURLs()
 }
 
 document.addEventListener("app.Ready", onAppReady, false);
 
-function handleExternalURLs() {
-    // Handle click events for all external URLs
-    if (device.platform.toUpperCase() === 'ANDROID') {
-        $(document).on('click', 'a[href^="http"]', function (e) {
-            var url = $(this).attr('href');
-            navigator.app.loadUrl(url, { openExternal: true });
-            e.preventDefault();
-            window.open(url,'_system');
-            console.log(url);
-        });
-    }
-    else if (device.platform.toUpperCase() === 'IOS') {
-        $(document).on('click', 'a[href^="http"]', function (e) {
-            var url = $(this).attr('href');
-            window.open(url, '_system');
-            e.preventDefault();
-        });
-    }
-    else {
-        // Leave standard behaviour
-    }
+// function handleExternalURLs() {
+//     // Handle click events for all external URLs
+//     if (device.platform.toUpperCase() === 'ANDROID') {
+//         $(document).on('click', 'a[href^="http"]', function (e) {
+//             var url = $(this).attr('href');
+//             navigator.app.loadUrl(url, { openExternal: true });
+//             e.preventDefault();
+//             window.open(url,'_system');
+//             console.log(url);
+//         });
+//     }
+//     else if (device.platform.toUpperCase() === 'IOS') {
+//         $(document).on('click', 'a[href^="http"]', function (e) {
+//             var url = $(this).attr('href');
+//             window.open(url, '_system');
+//             e.preventDefault();
+//         });
+//     }
+//     else {
+//         // Leave standard behaviour
+//     }
 
 
-    $(document).on('click','.home', function (e) {
+//     $(document).on('click','.home', function (e) {
  
-        myApp.confirm('By clicking "Ok" all unsaved changes will be lost.',
-            function () {
-                goHome();
-            },
-            function () {
+//         myApp.confirm('By clicking "Ok" all unsaved changes will be lost.',
+//             function () {
+//                 goHome();
+//             },
+//             function () {
 
-            }
-        );
-    });
+//             }
+//         );
+//     });
 
-    $(document).on('click','.back', function (e) {
-        e.preventDefault();
-       // window.history.back();
+//     $(document).on('click','.back', function (e) {
+//         e.preventDefault();
+//        // window.history.back();
 
-    })
+//     })
     
-}
+// }
 
-function checkRefresh(){
+// function checkRefresh(){
 
-}
+// }
 
 // document.addEventListener("deviceready", onAppReady, false) ;
 // document.addEventListener("onload", onAppReady, false) ;

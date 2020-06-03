@@ -1,97 +1,260 @@
 <!DOCTYPE html>
-<html>
+<html sigplusextliteextension-installed="true" sigwebext-installed="true">
+<!--
+  * Please see the included README.md file for license terms and conditions.
+  -->
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
     <!--
-        Customize this policy to fit your own app's needs. For more guidance, see:
-            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-        Some notes:
-            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
-
-    <!-- Required meta tags-->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    -->
+    <!-- <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <meta name="format-detection" content="telephone=no">
-    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="msapplication-tap-highlight" content="no"> -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
 
-    <!-- Your app title -->
-    <title>My App</title>
+    <meta name="theme-color" content="#ffffff">
+    <title>InsurApp</title>
+    <link rel="stylesheet" href="assets/css/font-awesome.css">
 
-    <!-- This template defaults to the iOS CSS theme. To support both iOS and material design themes, see the Framework7 Tutorial at the link below:
-        http://www.idangero.us/framework7/tutorials/maintain-both-ios-and-material-themes-in-single-app.html
-     -->
+    <link rel="stylesheet" href="assets/fonts/Montserrat-Regular/styles.css">
+    <link rel="stylesheet" href="assets/fonts/Montserrat-Bold/styles.css">
+    <link rel="stylesheet" href="assets/fonts/AppIcons/style.css">
 
-    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
-    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
+    <link rel="stylesheet" href="assets/css/framework7.ios.css">
 
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="assets/css/circle.css">
+    <link rel="stylesheet" href="assets/css/my-app.css">
+    
+
+    <style>
+        .cordova-camera-capture {
+            position: fixed !important;
+            z-index: 2147483647;
+            text-align: center;
+            height: 400px;
+            top: 40px;
+            background: #000 !important;
+            /* margin-left: 10%; */
+            /* margin-left: 50px; */
+            /* margin-right: 50%; */
+            align-content: center;
+            align-self: center;
+        }
+
+        .cordova-camera-capture {
+        }
+
+        video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            vertical-align: baseline;
+            font: inherit;
+            font-size: 100%;
+            width: 100%;
+        }
+
+        video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            vertical-align: baseline;
+            font: inherit;
+            font-size: 100%;
+            /*width: 100%;*/
+        }
+
+        button {
+            color: #fff;
+            background: #57c8e1;
+            border-color: transparent;
+        }
+        #overlay {
+            position: fixed; /* Sit on top of the page content */
+            
+            width: 100%; /* Full width (cover the whole page) */
+            height: 100%; /* Full height (cover the whole page) */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+            z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+            cursor: pointer; /* Add a pointer on hover */
+        }
+    </style>
+   
+    <script src="cordova.js"></script>          <!-- phantom library, needed for Cordova api calls, added during build -->
+    <script src="xdk/init-dev.js"></script>     <!-- normalizes device and document ready events, see README for details -->
 </head>
+<body onLoad="JavaScript:checkRefresh();" style="font-family: 'Oswald', sans-serif;font-size: 18px;">
+   
 
-<body>
-    <!-- Status bar overlay for full screen mode (PhoneGap) -->
     <div class="statusbar-overlay"></div>
-
-    <!-- Panels overlay-->
+  
     <div class="panel-overlay"></div>
-    <!-- Left panel with reveal effect-->
+
+    <!-- Left panel -->
     <div class="panel panel-left panel-reveal">
-        <div class="content-block">
-            <p>Left panel content goes here</p>
-        </div>
-    </div>
 
-    <!-- Views -->
-    <div class="views">
-        <!-- Your main view, should have "view-main" class -->
-        <div class="view view-main">
-            <!-- Top Navbar-->
-            <div class="navbar">
-                <div class="navbar-inner">
-                    <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-                    <div class="center sliding">Awesome App</div>
-                    <div class="right">
-                        <!--
-                          Right link contains only icon - additional "icon-only" class
-                          Additional "open-panel" class tells app to open panel when we click on this link
-                        -->
-                        <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
-                    </div>
-                </div>
-            </div>
-            <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
-            <div class="pages navbar-through toolbar-through">
-                <!-- Page, "data-page" contains page name -->
-                <div data-page="index" class="page">
-                    <!-- Scrollable page content -->
-                    <div class="page-content">
-                        <div class="content-block">
-                            <p>Page content goes here</p>
-                            <!-- Link to another page -->
-                            <a href="about.html">About app</a>
+        <div class="content-block-title"><span class="User_FullName">Name</span> <a href="#" class="close-panel text-purple" style="float:right;"><i class="fa fa-times"></i></a></div>
+        <div class="content-block" style="margin-bottom: 15px;">
+            <p class="">Choose from one of the options below.</p>
+        </div>
+        <div class="list-block" style="margin-top: 0px;">
+            <ul>
+                <li>
+                    <a href="landing.html" class="item-link close-panel">
+                        <div class="item-content">
+                            <div class="item-media"><i class="fa fa-home" style=" color: #29788b;"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">Home</div>
+                            </div>
                         </div>
+                    </a>
+                </li>
+
+                <span class="product-cats"></span>
+
+                <li>
+                    <a href="search.html" class="item-link close-panel">
+                        <div class="item-content">
+                            <div class="item-media"><i class="fa fa-search" style=" color: #29788b;"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">Search</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="javascript:gotClaim();" class="item-link close-panel">
+                        <div class="item-content">
+                            <div class="item-media"><i class="fa fa-clone" style=" color: #29788b;"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">Submit Claim</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <!--<li>
+                    <a href="wallet.html" class="item-link close-panel">
+                        <div class="item-content">
+                            <div class="item-media"><i class="fa fa-credit-card"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">Wallet</div>
+                            </div>
+                        </div>
+                    </a>
+                </li> -->
+                <li>
+                    <a href="support_manage_cards.html" class="item-link close-panel">
+                        <div class="item-content">
+                            <div class="item-media"><i class="fa fa-credit-card" style=" color: #29788b;"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">Manage Cards</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="cashout.html" class="item-link close-panel">
+                        <div class="item-content">
+                            <div class="item-media"><i class="fa fa-money" style=" color: #29788b;"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">Cashout</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <!--
+                <li>
+                    <a href="customer_manage_cards.html" class="item-link close-panel">
+                        <div class="item-content">
+                            <div class="item-media"><i class="fa fa-credit-card" style=" color: #29788b;"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">Manage Customer Cards</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                    -->
+                <li>
+                    <a href="savelead.html" class="item-link close-panel">
+                        <div class="item-content">
+                            <div class="item-media"><i class="fa fa-save" style=" color: #29788b;"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">Save Lead</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="profile.html" class="item-link close-panel">
+                        <div class="item-content">
+                            <div class="item-media"><i class="fa fa-user" style=" color: #29788b;"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">Change Password</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <!--<li>
+                    <a href="support.html" class="item-link close-panel">
+                        <div class="item-content">
+                            <div class="item-media"><i class="fa fa-cog" style=" color: #29788b;"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">Support</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>-->
+                <li>
+                    <a href="javascript:ClearLogin();" class="item-link close-panel">
+                        <div class="item-content">
+                            <div class="item-media"><i class="fa fa-lock" style=" color: #29788b;"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">Logout</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <p class="appversion text-center"></p>
+    </div>
+    <!-- Views-->
+    <div class="views ">
+        <!-- Your main view, should have "view-main" class-->
+        <div class="view view-main">
+            <div class="pages navbar-fixed toolbar-fixed">
+                <div data-page="index" class="page">
+                    <!--   <div class="videoloader">
+
+                      </div> -->
+                    <div style="text-align:center;padding-top: 120%;">
+                        <i class="fa fa-cog fa-spin fa-3x fa-fw text-white"></i>
                     </div>
-                </div>
-            </div>
-            <!-- Bottom Toolbar-->
-            <div class="toolbar">
-                <div class="toolbar-inner">
-                    <!-- Toolbar links -->
-                    <a href="#" class="link">Link 1</a>
-                    <a href="#" class="link">Link 2</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
-    <script type="text/javascript" src="js/my-app.js"></script>
-</body>
 
+    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/framework7.js"></script>
+    
+    <script type="text/javascript" src="assets/js/jquery.swipebox.js"></script>
+    <script type="text/javascript" src="assets/js/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script type="text/javascript" src="assets/js/masonry.pkgd.min.js"></script>
+    <script type="text/javascript" src="assets/js/moment/moment.min.js"></script>
+    <script type="text/javascript" src="assets/js/signature_pad.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.vide.min.js"></script>
+    
+    <script type="text/javascript" src="assets/js/app.js"></script>
+    <script type="text/javascript" src="assets/js/page-events.js"></script>
+    <script type="text/javascript" src="assets/js/core.js"></script>
+
+</body>
 </html>
