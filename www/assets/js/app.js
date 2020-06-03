@@ -181,14 +181,14 @@ $(document).ajaxComplete(function() {
 // by the same event or other events.
 
 function onAppReady() {
-    console.log("app is ready...")
-    StatusBar.backgroundColorByName("red");
-    User = JSON.parse(localStorage.getItem("User")); 
+    // console.log("app is ready...")
+    // StatusBar.backgroundColorByName("red");
+    // User = JSON.parse(localStorage.getItem("User")); 
     myApp.showPreloader('Please wait...');
-    //window.setTimeout(function () {
+    window.setTimeout(function () {
         myApp.hidePreloader();
         mainView.router.loadPage('login.html')
-    //},300)
+    },300)
     handleExternalURLs()
 }
 
