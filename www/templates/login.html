@@ -1,0 +1,34 @@
+<div>
+<ion-pane hide-nav-bar="true">
+
+  <ion-content scroll="false">
+  <div class="row">
+    <div class="logo">
+      <img data-ng-src="img/InsurApp.png" width="200" alt="InsurApp"/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col col-60 center">
+      <div class="list">
+        <form id="loginForm" ng-submit="doLogin()">
+         <label class="item item-input">
+         <input type="tel" name="username" placeholder="Username" ng-model="loginData.username">
+         </label>
+
+         <label class="item item-input">
+         <input type="password" name="password" placeholder="Password" ng-model="loginData.password">
+         </label>
+
+         <button class="button button-block button-positive" type="submit">Log in</button>
+        </form>
+       
+        <a href="#/reset-password" class="button button-block button-default">Reset password</a>
+      </div>
+      </div>
+    </div>
+    <div style="position: absolute; bottom: 2px; right: 2px; padding: 5px;" ng-bind-html="appVersionDisplay" id="version">
+
+    </div>
+  </ion-content>
+</ion-pane>
+</div>

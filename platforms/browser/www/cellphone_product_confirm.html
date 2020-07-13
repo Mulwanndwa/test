@@ -1,0 +1,153 @@
+<div class="pages navbar-fixed toolbar-fixed">
+    <div data-page="cellphone_product_confirm" class="page">
+        <div class="navbar">
+            <div class="navbar-inner"> 
+                <div class="left">
+                    <a href="cellphone_insurance.html?product_id=6" class="link icon-only text-blue">
+                        <span class="fa fa-arrow-left fa-2x"></span>
+                    </a>
+                </div>
+                <div class="center sliding Montserrat-Regular uppercase">CELLPHONE INSURANCE</div>
+                <div class="right home-btn">
+                    
+                </div>
+            </div>
+        </div>
+        
+          <div class="page-content " style="padding-bottom:0px;">
+              
+              <div class="lightbluearea purple">
+                  <div class="padded">
+                      
+                      <div class="Montserrat-Bold text-white pb5 text-center" id="CellphoneProductConfirm_Name"></div>
+                      <br>
+                  </div>
+              </div>
+              <div class="card">
+                  <form id="CellphoneCoverStep1Form" class="">
+                
+                      <!-- <div class="content-block-title text-purple text-center Montserrat-Bold">YOUR DETAILS</div>                 -->
+                          
+                          <input type="hidden" name="product_id" />
+                          <input type="hidden" name="premium" />
+                          <input type="hidden" name="imei" />
+                          
+                          <div class="list-block">
+                              <ul>
+                                  <li style="margin-left: 5px;">First Name*</li>
+                                  <li class="condensed-form">
+                                    <div class="item-content">
+                                      <div class="item-inner">
+                                        
+                                        <div class="item-input">
+                                          <input type="text" placeholder="First name" name="first_name" >
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </li> 
+                                  <li style="margin-left: 5px;">Last Name*</li>
+                                  <li class="condensed-form">
+                                     
+                                    <div class="item-content">
+                                      <div class="item-inner">
+                                        <div class="item-input">
+                                          <input type="text" placeholder="Last surname" name="last_name" >
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </li>
+                                  <li style="margin-left: 5px;">SA ID*</li>
+                                  <li class="condensed-form">
+                                    <div class="item-content">
+                                      <div class="item-inner">
+                                        <div class="item-input">
+                                          <input type="text" placeholder="South African ID Number" id="sa_id" name="sa_id" readonly>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </li>
+                                  <li style="margin-left: 5px;">Date of Birth</li>
+                                  <li class="condensed-form">
+                                    <div class="item-content">
+                                      <div class="item-inner">
+                                        <div class="item-input">
+                                          <input type="text" placeholder="Date of birth" name="dob" id="dob" readonly>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </li>
+                                  <li style="margin-left: 5px;">Cellphone*</li>
+                                  <li class="condensed-form">
+                                    <div class="item-content">
+                                      <div class="item-inner">
+                                        <div class="item-input">
+                                          <input type="text" placeholder="Cellphone" name="tel_cell" >
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </li>
+                                  <li style="margin-left: 5px;">Email</li>
+                                  <li class="condensed-form">
+                                    <div class="item-content">
+                                      <div class="item-inner">
+                                        <div class="item-input">
+                                          <input type="text" placeholder="Email address" name="email_address" >
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </li>
+                                  <li style="margin-left: 5px;">Postal Code</li>
+                                  <li class="condensed-form">
+                                    <div class="item-content">
+                                      <div class="item-inner">
+                                        <div class="item-input">
+                                          <input type="text" placeholder="Postal code" name="postal_code" id="postal_code2" onkeypress="allow_numeric(event)">
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </li>
+                              </ul>
+                          </div>  
+                          
+                          <div class="content-block-title text-purple text-center Montserrat-Bold">ALTERNATIVE CONTACT DETAILS</div> 
+                          
+                          <div class="list-block">
+                              <ul>
+                                  <li style="margin-left: 5px;">Name</li>
+                                  <li class="condensed-form">
+                                    <div class="item-content">
+                                      <div class="item-inner">
+                                        <div class="item-input">
+                                          <input type="text" placeholder="Name of beneficiary" name="beneficiary_name">
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </li>
+                                  <li style="margin-left: 5px;">Cellphone</li>
+                                  <li class="condensed-form">
+                                    <div class="item-content">
+                                      <div class="item-inner">
+                                        <div class="item-input">
+                                          <input type="text" placeholder="Beneficiary cellphone" name="beneficiary_sa_id">
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </li>
+                              </ul>
+                          </div>  
+                      <br/>
+                          <div class="content-block">
+                              <div class="row">
+                                  <div class="col-100">
+                                      <a href="javascript:CellphoneProductStep1Save();" class="close-popup button button-big button-fill bg-purple uppercase">Next</a>
+                                  </div>
+                              </div>
+                          </div>
+                          
+                      </form>  
+
+              </div>
+          
+          </div>
+    </div>
+</div>

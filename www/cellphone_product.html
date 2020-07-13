@@ -3,69 +3,141 @@
         <div class="navbar">
             <div class="navbar-inner"> 
                 <div class="left">
-                    <a href="#" data-panel="left" class="open-panel link icon-only text-blue">
-                        <span class="fa fa-bars"></span>
+                    <a href="#" class="link back icon-only text-blue back">
+                        <span class="fa fa-arrow-left fa-2x"></span>
                     </a>
                 </div>
-                <div class="center sliding Montserrat-Regular uppercase"><img src="assets/img/logo-top-badge-only.png" style="height: 30px;" /> &nbsp;&nbsp;CELLPHONE INSURANCE</div>
+                <div class="center sliding Montserrat-Regular uppercase">CELLPHONE INSURANCE</div>
                 <div class="right home-btn">
-                    
+                    <a href="#" class="link icon-only text-pink home">
+                        <span class="fa fa-home fa-2x"></span>
+                    </a>
                 </div>
             </div>
         </div>
-        
             <div class="page-content" style="padding-bottom:0px;">
-                
-                <div class="lightbluearea purple">
+                <div class="lightbluearea purple" style="display: none">
                     <div class="padded">
+                            <div class="content-block-title text-purple uppercase Montserrat-Bold text-center">Select a product</div>
+                    </div>
+                </div>
+               
+                
+                <!-- Search Bar -->
+                <div class="list-block card">
+                    <div class="content-block policy-description" id="CellphoneProduct_Description" style="margin-top: 0px;"> </div>
+                    <div class="applyBtn">
+                        <a href="javascript:ShowDetailsForm();" style="margin-left: 5px; margin-right: 5px;" class="close-popup button button-small button-fill bg-pink uppercase btn-with-icon">Apply</a>
+                    </div>
+                    <div class="p10 MemberDetails" style="display: none;">
+                    
+                        <h5>Cellphone Make*</h5>
+                        <ul>
+                            <li class="item-content item-input item-input-with-value condensed-form">
+                                <div class="item-inner">
+                                    <div class="item-input-wrap input-dropdown-wrap" style="width: 100%">
+                                    <select placeholder="Please choose..." class="input-with-value" id="CellProductOptions" onchange="LoadCellphoneModels(this.value)">
+                                        <option value="">---Select a cellphone make---</option>
+                                    </select>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <h5>Cellphone Model*</h5>
+                        <ul>
+                            <li class="item-content item-input item-input-with-value condensed-form">
+                                <div class="item-inner">
+                                    <div class="item-input-wrap input-dropdown-wrap" style="width: 100%">
+                                    <select placeholder="Please choose..." class="input-with-value" id="CellphoneModelProductOptions" onchange="cellphonePremium(this.value)">
+                                        <option value="">---Select a cellphone model---</option>
+                                    </select>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                   
                         
-                        <div class="Montserrat-Bold text-white pb5 text-center" id="CellphoneProduct_Name"></div>
-                        <br>
-                    </div>
-                </div>
-                
-                <div id="CellphoneProduct_Meta">
-                    <div class="content-block" id="CellphoneProduct_Description">
+                        <div class="list-block ">
+
+                            <ul>
+                                <li>
+                                    <h5>Cover Period Month*</h5>
+                                    <div class="item-content" style="padding-left: 0px;">
+                                        <div class="item-inner" style="padding-right: 0px;">
+                                            <div class="item-input">
+                                                <div class="row">
+                                                    <div class="col-20"><a style="border-radius:0px; box-shadow:none" href="javascript:Increment('minus', '#CellphoneProduct_CoverPeriod');" class="button button-big button-fill bg-pink"><i class="fa fa-minus"></i></a></div>
+                                                    <div class="col-60" id="CellphoneProduct_Slider"></div>
+                                                    <div class="col-20"><a style="border-radius:0px; box-shadow:none" href="javascript:Increment('plus', '#CellphoneProduct_CoverPeriod');" class="button button-big button-fill bg-pink"><i class="fa fa-plus"></i></a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <h5>Cover Amount*</h5>
+                        <ul>
+                            <li class="item-content item-input item-input-with-value condensed-form">
+                                <div class="item-inner">
+                                    <div class="item-input-wrap" style="width: 100%">
+                                            <input type="number" class="cover_amount" id="CellphoneProduct_CoverPeriodAmount" readonly>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <h5 class="premium-value" style="display: none">Policy Premium</h5>
+                        <ul class="premium-value" style="display: none">
+                            <li class="item-content item-input item-input-with-value condensed-form">
+                                <div class="item-inner">
+                                    <div class="item-input-wrap" style="width: 100%; text-align: center">
+                                           <span id="CellphoneProductPremium"></span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div id="customer_idnumber" style="display: none">
+                                <h5>ID Number*</h5>
+                            <ul>
+                                <li class="item-content item-input item-input-with-value condensed-form">
+                                    <div class="item-inner">
+                                        <div class="item-input-wrap" style="width: 100%; text-align: center">
+                                                <input type="number" class="sa_id" id="cellphone_product_id_number" onkeypress="allow_numeric(event)" placeholder="ID Number" value="">
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        
+
+                        <br/>
+                        <!-- <ul>
+                            <li class="item-content "> -->
+                                <div class="row">
+                                    <div class="col-50">
+                                        <a href="javascript:calculateCellphonePremium();" class="button button-fill bg-pink">Calculate</a>
+                                    </div>
+                                    <div class="col-50">
+                                        <a id="proceed" style="display:none;" href="javascript:LoadCellphoneProductConfirmation();" class="close-popup button  button-fill bg-pink  btn-with-icon" style=" margin: 0 auto;">Proceed </a>
+                                    </div>
+                                </div>
+                            <!-- </li>
+                        </ul> -->
+
+                        <input type="hidden" id="FuneralProduct_Currency" />
+                        <input type="hidden" id="FuneralProduct_Units" />
+                        <input type="hidden" id="cellphone_loan_premium" />
+                        <input type="hidden" id="device_id" />
+                        <input type="hidden" id="dateOfBirth" />
+
+                       
 
                     </div>
-
-                    <div class="content-block">
-                        <div class="row">
-                            <div class="col-50">
-                                <a href="javascript:StartBuyCellphoneCover();" class="close-popup button button-big button-fill bg-purple uppercase">Buy</a>
-                            </div>
-                            <div class="col-50">
-                                <a href="cellphone_insurance.html" class="close-popup button button-big button-fill bg-blue uppercase">Back</a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-                
-                
-                <div class="content-block" id="CellphoneProduct_Form" style="display:none;">
-                    
-                    <div class="content-block-title text-purple text-center Montserrat-Bold" style="padding-top: 0px;" id="CellphoneProduct_Device"></div>
-                    <div class="content-block text-center">
-                        <p>By clicking "Get Quote" we will quote you on insuring the device you are currently using.</p>
-                    </div>
-                    
-                    <input type="hidden" id="CellphoneProduct_Currency" />
-                    <input type="hidden" id="CellphoneProduct_Units" />
-                    
-                    <div class="content-block">
-                        <div class="row">
-                            <div class="col-50">
-                                <a href="javascript:GetCellphoneProductQuote();" class="close-popup button button-big button-fill bg-purple uppercase">Get Quote</a>
-                            </div>
-                            <div class="col-50">
-                                <a href="cellphone_insurance.html" class="close-popup button button-big button-fill bg-blue uppercase">Back</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-                
-            
             </div>
     </div>
 </div>

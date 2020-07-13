@@ -1,0 +1,12 @@
+  <ion-modal-view>
+    <ion-header-bar>
+      <h1 class="title">Payment Methods</h1>
+    </ion-header-bar>
+    <ion-content>
+      <ion-list>
+      	<div ng-repeat="payment_option in payment_options">
+          <ion-item ng-click="paymentSelected('{{payment_option}}');">{{payment_option}}</ion-item>
+        </div>
+      </ion-list>
+    </ion-content>
+  </ion-modal-view>

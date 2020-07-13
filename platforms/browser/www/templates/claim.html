@@ -1,0 +1,81 @@
+<div>
+  <ion-content>
+		<div class="bar bar-header bar-light">
+		  <h1 class="title">Capture Claim Details</h1>
+		</div>
+		<br/>
+		<br/>
+		<div class="row">
+			<div class="col">
+				<!-- Claim Details Section -->
+				<div ng-hide="!claimdetails">
+					<label class="item item-input item-stacked-label">
+						<span class="input-label">Name:</span>
+						<input type="text" placeholder="Name" ng-model="member_name">
+					</label>
+
+					<label class="item item-input item-stacked-label">
+						<span class="input-label">ID Number:</span>
+						<input type="text" placeholder="ID Number" ng-model="member_idnumber">
+					</label>
+					<br/>
+					<br/>
+					<button class="button button-block button-energized" ng-click="submitClaim();">Submit</button>
+				</div>
+
+				<!-- Claim ID Photo Section -->
+				<div ng-hide="!claimdeathidphoto">
+					<center>
+						<h3>Take a photo of the client's DECEASED ID</h3>
+						<br/>
+						<br/>
+						<button class="button button-positive" ng-click="claimTakePhoto();">Take Photo</button>
+					</center>
+					<br/>
+					<br/>
+					
+					<button class="button button-block button-energized" ng-click="claimDeathIdPhotoNext();">Next</button>
+					<button class="button button-block button-stable" ng-click="claimPhotoCancel();">Cancel</button>
+				</div>
+
+				<!-- Claim Photo Section -->
+				<div ng-hide="!claimdeathphoto">
+					<center>
+						<h3>Take a photo of the client's DEATH CERTIFICATE</h3>
+						<br/>
+						<br/>
+						<button class="button button-positive" ng-click="claimTakePhoto();">Take Photo</button>
+					</center>
+					<br/>
+					<br/>
+					
+					<button class="button button-block button-energized" ng-click="claimDeathPhotoNext();">Next</button>
+					<button class="button button-block button-stable" ng-click="claimPhotoCancel();">Cancel</button>
+				</div>
+
+				<!-- Claim Signature Section -->
+				<div ng-hide="!claimsignature">
+					<center>
+						<h3>Client Signature</h3>
+						<p>Please click SIGN and get the client to sign.</p>
+					</center>
+					<br/>
+					<br/>
+					
+					<button class="button button-block button-energized" ng-click="claimSignature();">Sign</button>
+				</div>
+
+				<!-- Claim Complete Section -->
+				<div ng-hide="!claimcomplete">
+					<center>
+						<h1>Complete</h1>
+						<p>Claim complete</p>
+					</center>
+					<br/>
+					<br/>
+					<button class="button button-block button-stable" ng-click="closeClaim();">Close</button>
+				</div>
+			</div>
+		</div>
+  </ion-content>
+</div>

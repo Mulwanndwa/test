@@ -1,0 +1,86 @@
+<ion-view>
+	<ion-nav-title>Search</ion-nav-title>
+  <ion-content>
+  	<div ng-hide="!search">
+	    <label class="item" style="border:none">
+	    	<p>ID number</p>
+	        <input class="form-control" type="tel" placeholder="ID number" ng-model="id_number">
+	    </label>
+
+	    <label class="item" style="border:none">
+	    	<p>Policy number</p>
+	        <input class="form-control" type="text" placeholder="Policy number" ng-model="policy_number">
+	    </label>
+
+	    <label class="item" style="border:none">
+	    	<p>Cellphone</p>
+	        <input class="form-control" type="tel" placeholder="Cellphone" ng-model="cellphone">
+	    </label>
+
+	    <label class="item" style="border:none">
+	    	<p>Quote number</p>
+	    	<input class="form-control" type="tel" placeholder="Quote number" ng-model="quote_number" ng-value="QUOTE_">
+	    </label>
+
+	    <label class="item" style="border:none">
+	      <button class="button button-block button-energized" ng-click="submitSearch(id_number, policy_number, cellphone, quote_number);" ng-disabled="!validateSearch(id_number, policy_number, cellphone, quote_number);">Submit</button>
+	    </label>
+	</div>
+
+	<div ng-hide="!searchList">
+		<div>
+		<ul class="list" ng-repeat="item in searchResults">
+			<li ng-click="showItem(item.policy_number);" class="item item-icon-right">
+				<strong>{{item.product_name}}</strong>
+				<br/><br/>
+				<small>
+					{{item.first_name}} {{item.last_name}}
+					<span ng-show="item.policy_number"><br/><strong>Policy Number:</strong> {{item.policy_number}}</span>
+					<span ng-show="item.data.loan_amount > 0"><br/><strong>Amount:</strong> {{item.data.loan_amount}}</span>
+					<span ng-show="item.data.loan_term > 0"><br/><strong>Term:</strong> {{item.data.loan_term}}</span>
+					<span ng-show="item.quote_number"><br/><strong>Quote:</strong> {{item.quote_number}}</span>
+					<span ng-show="item.type"><br/><strong>Status:</strong> {{item.type}}</span>
+					<span ng-show="item.expiry_date"><br/><strong>Expiry Date:</strong> {{item.expiry_date}}</span>
+				</small>
+				<i class="icon ion-chevron-right"></i>
+			</li>
+		</ul>
+		</div>
+
+		<label class="item">
+          <button class="button button-block button-energized" ng-click="backToSearch();">Back</button>
+        </label>
+        
+	</div>
+
+	<div ng-hide="!searchView">
+		<p class="item">
+			<strong>Name:</strong> {{policyData.first_name}} {{policyData.last_name}} <br/>
+			<strong>ID Number:</strong> {{policyData.sa_id}} <br/>
+			<strong>Policy Number:</strong> {{policyData.policy_number}}<br/>
+			<span ng-show="policyData.quote_number"><strong>Quote Number:</strong> {{policyData.quote_number}}<br/></span>
+			<strong>Product:</strong> {{policyData.product_name}}<br/>
+			<span ng-show="policyData.data.loan_amount > 0"><strong>Amount:</strong> {{policyData.data.loan_amount}}<br/></span>
+			<span ng-show="policyData.data.loan_term > 0"><strong>Term:</strong> {{policyData.data.loan_term}}</span>
+			<span ng-show="policyData.expiry_date"><br/><strong>Expiry Date:</strong> {{policyData.expiry_date}}</span>
+		</p>
+		<div class="item">
+			<div ng-show="policyData.sale_complete == 0 || policyData.sale_complete == 99">
+	          <button class="button button-block button-energized" ng-click="complete(policyData.ins_prod_id, policyData.policy_number);">Complete Application</button>
+	        </div>
+	        <div ng-show="policyData.sale_complete == 1">
+	          <button class="button button-block button-energized" ng-click="sms(policyData.policy_number);">SMS details</button>
+	        </div>
+	        <div ng-show="policyData.sale_complete == 1">
+	          <button class="button button-block button-energized" ng-click="renew(policyData.ins_prod_id, policyData.policy_number);">Renew policy</button>
+	        </div>
+	         <div ng-show="policyData.sale_complete == 22 || policyData.sale_complete == 44">
+	          <span class="button button-block button-energized">Please make a payment of R{{policyData.premium}} at your nearest ABSA atm.</button>
+	        </div>
+	        <div>
+	          <button class="button button-block button-energized" ng-click="backToResults();">Back</button>
+	        </div>
+	    </div>
+	</div>
+  </ion-content>
+</ion-view>

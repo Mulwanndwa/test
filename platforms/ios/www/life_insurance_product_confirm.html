@@ -1,0 +1,118 @@
+<div class="pages navbar-fixed toolbar-fixed">
+    <div data-page="life_insurance_product_confirm" class="page">
+        <div class="navbar">
+            <div class="navbar-inner"> 
+                <div class="left">
+                    <a href="#" class="link back icon-only text-blue back">
+                        <span class="fa fa-arrow-left fa-2x"></span>
+                    </a>
+                </div>
+                <div class="center sliding Montserrat-Regular">
+                    <span id="FuneralProductConfirm_Name">Funeral Policies</span>
+                </div>
+                <div class="right">
+                    <a href="#" class="link icon-only text-pink home">
+                        <span class="fa fa-home fa-2x"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+            <div class="page-content" style="padding-bottom:0px;">
+                
+                <div class="p10 card">
+                    <form id="FuneralCoverStep1Form">
+
+                        <div class="mt20 text-pink text-center">Main Member Details*</div>
+
+                        <input type="hidden" name="product_id" />
+                        <input type="hidden" name="premium" />
+
+                        <div class="list-block">
+                            <ul>
+                                <li class="item-label text-pink">Name*</li>
+                                <li class="item-content condensed-form textbox no-margin-top">
+                                    <div class="item-inner">
+                                        <div class="item-input">
+                                            <input type="text" name="first_name" id="first_name" placeholder="Name">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="item-label text-pink">Surname*</li>
+                                <li class="item-content condensed-form textbox no-margin-top">
+                                    <div class="item-inner">
+                                        <div class="item-input">
+                                            <input type="text" name="last_name" id="last_name" placeholder="Surname">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="item-label text-pink">SA ID*</li>
+                                <li class="item-content condensed-form textbox no-margin-top">
+                                    <div class="item-inner">
+                                        <div class="item-input">
+                                            <input type="text" name="sa_id" id="sa_id" placeholder="South Africa ID" readonly>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="item-label text-pink">Cellphone*</li>
+                                <li class="item-content condensed-form no-margin-top">
+                                    <div class="item-inner">
+                                        <div class="item-input">
+                                            <input type="text" name="tel_cell" id="tel_cell" placeholder="Cellphone">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="item-label text-pink">Email</li>
+                                <li class="item-content condensed-form no-margin-top">
+                                    <div class="item-inner">
+                                        <div class="item-input">
+                                            <input type="text" name="email_address" placeholder="Email">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="item-label text-pink">Postal Code*</li>
+                                <li class="item-content condensed-form no-margin-top">
+                                    <div class="item-inner">
+                                        <div class="item-input">
+                                            <input type="text" name="postal_code" id="postal_code" placeholder="Postal code">
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="mt20 text-pink text-center">Beneficiary</div>
+
+                        <div class="list-block">
+                            <ul>
+                                <li class="item-label text-pink">Beneficiary Full Name*</li>
+                                <li class="item-content condensed-form no-margin-top">
+                                    <div class="item-inner">
+                                        <div class="item-input">
+                                            <input type="text" name="beneficiary_name" id="beneficiary_name" placeholder="Beneficiary full name">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="item-label text-pink">Beneficiary Cellphone Number*</li>
+                                <li class="item-content condensed-form no-margin-top">
+                                    <div class="item-inner">
+                                        <div class="item-input">
+                                            <input type="text" name="beneficiary_sa_id" id="beneficiary_sa_id" placeholder="0740000000">
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <br /><br />
+                        <div class="content-block">
+
+                            <a href="javascript:FuneralProductStep1Save();" class="button button-big button-fill bg-pink uppercase" style="width: 60%; margin: 0 auto;">Proceed <i class="fa fa-arrow-right"></i></a>
+                            <!--<a href="javascript:LifeInsuranceProductStep1Save();" class="button button-big button-fill bg-pink uppercase" style="width: 60%; margin: 0 auto;">Proceed <i class="fa fa-arrow-right"></i></a>-->
+                        </div>
+
+                    </form>  
+                </div>
+                
+            </div>
+    </div>
+</div>

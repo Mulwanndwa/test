@@ -1,0 +1,25 @@
+<ion-view>
+	<ion-nav-title>My Profile</ion-nav-title>
+  <ion-content>
+  	<div>
+	    <label class="item" style="border:none">
+	    	<p>Old Password</p>
+	        <input class="form-control" type="password" placeholder="Old Password" ng-model="old_password">
+	    </label>
+
+	    <label class="item" style="border:none">
+	    	<p>New Password</p>
+	        <input class="form-control" type="password" placeholder="New Password" ng-model="new_password">
+	    </label>
+
+	    <label class="item" style="border:none">
+	    	<p>Confirm Password <span ng-show="!checkPasswordMatch(new_password, confirm_password)"><small><strong>(Password does not match)</strong></small></span></p>
+	        <input class="form-control" type="password" placeholder="Confirm Password" ng-model="confirm_password">
+	    </label>
+	  
+	    <label class="item" style="border:none">
+	      <button class="button button-block button-energized" ng-click="updateProfile(old_password, new_password, confirm_password);" ng-disabled="!validatePasswords(old_password, new_password, confirm_password);">Update</button>
+	    </label>
+	</div>
+  </ion-content>
+</ion-view>

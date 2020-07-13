@@ -1,0 +1,30 @@
+<ion-view>
+	<ion-nav-title>Create Lead</ion-nav-title>
+    <ion-content>
+    <div class="" style="padding-top: 1px;padding-bottom: 1px;">
+        <div class="row">
+            <div class="col-100">
+                <p>Cell Number <span ng-show="cell_number != '' && cell_number.length < 10 || cell_number.length > 10"><small>(Must not be more or less than 10 digits)</small></span></p>
+                <input class="form-control" type="tel" placeholder="Cell Number" ng-model="save.cell_number">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-100">
+                <p>First Name</p>
+                <input class="form-control inputs" type="text" placeholder="First Name" ng-model="save.first_name">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-100">
+                <p>Last Name</p>
+                <input class="form-control" type="text" placeholder="Last Name" ng-model="save.last_name">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-100">
+                <button class="button button-block button-energized" ng-click="create_lead(save.cell_number, save.first_name, save.last_name);" ng-disabled="!save.cell_number || !save.first_name || !save.last_name || save.cell_number.length < 10">Send</button>
+            </div>
+         </div>
+       </div>
+    </ion-content>
+</ion-view>

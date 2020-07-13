@@ -1,0 +1,31 @@
+<div ng-controller="ServicesMobileDataCtrl">
+<ion-view view-title="Mobile Data: {{pinless_airtime_products_item.description}}">
+   <style>
+      .item-divider {
+            background-color: #{{$root.appDesign.colour2}};
+            color: #fff;
+      }
+      .button.button-energized {
+            background-color: #{{$root.appDesign.colour1}};
+            color: #fff;
+      }
+    </style>
+    <ion-content>
+    	<div class="item item-divider">
+         <p>Enter Recipient</p>
+      </div>
+
+      <div class="list">
+
+          <label class="item">
+            <span class="input-label">Cell Number:</span>
+              <input type="tel" placeholder="Cell Number" ng-model="at.cellnumber" required>
+            </label>
+
+          <label class="item">
+            <button class="button button-block button-energized" ng-click="addListItem(customQuote)">Submit</button>
+          </label>
+      </div>
+  </ion-content>
+</ion-view>
+</div>

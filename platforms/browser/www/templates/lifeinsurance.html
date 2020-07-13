@@ -1,0 +1,453 @@
+<ion-view>
+<ion-nav-title>{{$root.pageTitle}}</ion-nav-title>
+<div>
+    <style>
+      .item-divider {
+            background-color: #{{$root.appDesign.colour2}};
+            color: #fff;
+      }
+      .button.button-energized {
+            background-color: #{{$root.appDesign.colour1}};
+            color: #fff;
+      }
+
+
+    </style>
+
+    <div ng-hide="loancomplete">
+      <!-- Loan Info Section -->
+    <div ng-hide="!loaninfo">
+       <ion-content drag-content="false" animation="no-animation">
+        <div class="item">
+          <p ng-bind-html="productDescription"></p>
+          <br/><br/>
+          </div>
+          <div class="item">
+            <button class="button button-block button-energized" ng-click="buyInfo();">Apply</button>
+            <button class="button button-block button-energized" ng-click="backInfo();">Back</button>
+          </div>
+        
+      </ion-content>
+    </div>
+
+    <!-- Loan Choose Section -->
+    <div ng-hide="!loanchoose">
+          <ion-content drag-content="false" animation="no-animation">
+    <!--<label class="item item-input item-stacked-label">
+              <span class="input-label">Date Of Birth:</span>
+              <div class="row">
+              <div class="col">
+                <label class="item item-input item-stacked-label">
+                  <span class="input-label">Year</span>
+                  <br />
+                  <select name="dob_year" ng-model="dob_year" ng-change="date_birth_change(dob_year, dob_month, dob_day);">
+                    <option ng-repeat='ccyy in dob_years'>{{ ccyy }}</option>
+                  </select>
+                </label>
+              </div>
+              <div class="col">
+                <label class="item item-input item-stacked-label">
+                  <span class="input-label">Month</span>
+                  <br />
+                  <select name="dob_month" ng-model="dob_month" ng-change="date_birth_change(dob_year, dob_month, dob_day);">
+                    <option ng-repeat='mm in dob_months'>{{ mm }}</option>
+                  </select>
+                </label>
+              </div>
+              <div class="col">
+                <label class="item item-input item-stacked-label">
+                  <span class="input-label">Day</span>
+                  <br />
+                  <select name="dob_day" ng-model="dob_day" ng-change="date_birth_change(dob_year, dob_month, dob_day);">
+                    <option ng-repeat='dd in dob_days'>{{ dd }}</option>
+                  </select>
+                </label>
+              </div>
+            </div>
+          </label> -->
+
+          <div class="list">
+            <div class="item item-divider">
+              ID Number
+            </div>
+            
+            <label class="item">
+              <input class="form-control" type="tel" placeholder="ID Number" ng-model="member_sa_id" ng-change="id_number_change(member_sa_id);">
+            </label>
+
+            <div class="item item-divider">
+               Benefit Amount (R)
+            </div>
+            <label class="item" style="text-align: center;">
+            <span class="input-label">R{{loan_amount}}</span>
+              <input type="range" name="loan_amount" ng-model="loan_amount" min="{{loan_min}}" max="{{loan_max}}" step="1250" style="width: 90%;" ng-disabled="!loanbirthselected">
+            </label>
+            <div class="item item-divider">
+              Cover Period {{term_unit}}
+            </div>
+
+            <label class="item" style="text-align: center;">
+              <span class="input-label">{{loan_term}} ({{term_unit}})</span>
+              <input type="range" name="loan_term" ng-model="loan_term" min="{{term_min}}" max="{{term_max}}" step="1" style="width: 90%;" ng-disabled="!loanbirthselected && loan_amount == 0">
+
+            </label>
+
+            <div class="item item-divider">
+                Cover Amount
+            </div>
+            <label class="item" style="text-align: center;">
+              <input class="form-control" type="text" value="{{product_detail.cover}}" disabled="disabled">
+            </label>
+
+            <label class="item">
+              <button class="button button-block button-energized" ng-click="calculatePolicy(loan_amount, loan_term, member_sa_id);" ng-disabled="!loanbirthselected && loan_amount == 0">Calculate Policy Premium</button>
+            </label>
+
+            <label class="item">
+              <input class="form-control" type="text" placeholder="Policy value" ng-model="loan_policy" disabled="disabled">
+            </label>
+
+            <label class="item">
+              <button class="button button-block button-energized" ng-click="submitLoan(loan_amount, loan_term, member_sa_id);" ng-disabled="
+              !loanbirthselected || !policycalculated">Submit</button>
+            </label>
+          </div>
+          </ion-content>
+   </div>
+
+    <!-- Loan Confirm Section -->
+    <div ng-hide="!loanreview">
+    <ion-content drag-content="false" animation="no-animation">
+
+          <div class="list">
+            <!-- Loan Amount -->
+            <div class="item item-divider">
+              Benefit Amount
+            </div>
+            <label class="item">
+              <input type="text" ng-model="loan_amount" value="{{product_detail.premium}}" disabled="disabled" />
+            </label>
+
+            <!-- Loan Term -->
+            <div class="item item-divider">
+              Cover Period {{term_unit}}
+            </div>
+            <label class="item">
+              <input type="text" ng-model="loan_term" disabled="disabled" />
+            </label>
+
+            <div class="item item-divider">
+                Cover Amount
+            </div>
+            <label class="item" style="text-align: center;">
+              <input class="form-control" type="text" value="{{product_detail.cover}}" disabled="disabled">
+            </label>
+
+            <!-- Policy Premium -->
+            <div class="item item-divider">
+              Policy Premium
+            </div>
+            <label class="item">
+              <input type="text" ng-model="loan_policy" value="{{product_detail.premium}}" disabled="disabled">
+            </label>
+
+            <!-- Customer Cell/ID number
+            <div class="item item-divider">
+              Customer Cell/ID number
+            </div>
+            <label class="item">
+              <input type="tel" ng-model="customer_idcell" class="form-control" ng-disabled="prePopulated">
+            </label> -->
+
+
+          </div>
+
+        <div class="row">
+      <button class="button button-block button-energized" ng-click="completeLoan(customer_idcell);" ng-disabled="!customer_idcell || customer_idcell.length < 8">Next</button>
+      </div>
+
+      <div class="row">
+        <button class="button button-block button-stable" ng-click="backLoanComplete();">Back</button>
+      </div>
+
+      <div class="row">
+        <button class="button button-block button-stable" ng-click="cancelLoan();">Cancel</button>
+      </div>
+
+      </ion-content>
+    </div>
+
+    <!-- Member Details Section -->
+    <div ng-hide="!memberdetails">
+    <ion-content drag-content="false" animation="no-animation">
+      <div class="row">
+        <div class="col">
+
+        <div class="list">
+          <label class="item item-input item-stacked-label">
+              <span class="input-label">First Name:</span>
+            <input type="text" placeholder="First Name" ng-model="member_name">
+          </label>
+
+          <label class="item item-input item-stacked-label">
+              <span class="input-label">Surname:</span>
+            <input type="text" placeholder="Surname" ng-model="member_surname">
+          </label>
+
+          <label class="item item-input item-stacked-label">
+              <span class="input-label">SA ID:</span>
+            <input type="tel" placeholder="SA ID" ng-model="member_sa_id" ng-disabled="prePopulated">
+          </label>
+
+          <br/>
+          <br/>
+          <button class="button button-block button-energized" ng-click="memberDetails(member_name, member_surname, member_sa_id);" ng-disabled="validateMemberDetails(member_name, member_surname, member_sa_id);">Next</button>
+
+          <button class="button button-block button-energized" ng-click="saveMemberDetails(member_name, member_surname, member_sa_id);" ng-disabled="validateMemberDetails(member_name, member_surname, member_sa_id);">Save</button>
+
+          <div class="row">
+            <button class="button button-block button-stable" ng-click="backMemberDetails();">Back</button>
+          </div>
+        </div>
+      </div>
+
+      </div>
+      </ion-content>
+      </div>
+
+
+    <!-- Member Additional Details Section -->
+    <div ng-hide="!additionaldetails">
+    <ion-content drag-content="false" animation="no-animation">
+      <div class="row">
+        <div class="col">
+          <label class="item item-input item-stacked-label">
+              <span class="input-label">Cell Number: <span ng-show="member_cell != '' && member_cell.length < 10 || member_cell.length > 10"><small>(Must not be more or less than 10 digits)</small></span></span>
+            <input type="tel" placeholder="Cell Number" ng-model="member_cell">
+          </label>
+
+          <label class="item item-input item-stacked-label">
+              <span class="input-label">Email Address:</span>
+            <input type="email" placeholder="Email Address" ng-model="member_email">
+          </label>
+
+          <label class="item item-input item-stacked-label">
+              <span class="input-label">Postal Code:</span>
+            <input type="tel" placeholder="Postal Code" ng-model="member_postalcode" ng-minlength=4 ng-maxlength=4>
+          </label>
+
+          <label class="item item-input item-stacked-label">
+              <span class="input-label">Beneficiary Full Name:</span>
+            <input type="text" placeholder="Beneficiary Full Name" ng-model="member_benefactor_name">
+          </label>
+
+          <label class="item item-input item-stacked-label">
+              <span class="input-label">Beneficiary Cell Number: <span ng-show="member_benefactor_idnumber != '' && member_benefactor_idnumber.length < 10 || member_benefactor_idnumber.length > 10"><small>(Must not be more or less than 10 digits)</small></span></span>
+            <input type="tel" placeholder="Beneficiary Cell Number" ng-model="member_benefactor_idnumber">
+          </label>
+          <br/>
+          <br/>
+          <button class="button button-block button-energized" ng-click="memberAdditionalDetails(member_cell, member_email, member_postalcode, member_benefactor_name, member_benefactor_idnumber);" ng-disabled="!member_cell || !member_postalcode || !member_benefactor_name || !member_benefactor_idnumber || member_postalcode.length == 3 || member_cell.length < 10 || member_benefactor_idnumber.length < 10 || member_cell.length > 10 || member_benefactor_idnumber.length > 10">Next</button>
+
+          <button class="button button-block button-energized" ng-click="SaveMemberAdditionalDetails(member_cell, member_email, member_postalcode, member_benefactor_name, member_benefactor_idnumber);" ng-disabled="!member_cell || !member_postalcode || !member_benefactor_name || !member_benefactor_idnumber || member_postalcode.length == 3 || member_cell.length < 10 || member_benefactor_idnumber.length < 10 || member_cell.length > 10 || member_benefactor_idnumber.length > 10">Save</button>
+
+          <div class="row">
+            <button class="button button-block button-stable" ng-click="backMemberAdditionalDetails();">Back</button>
+          </div>
+        </div>
+      </div>
+      </ion-content>
+    </div>
+
+    <!-- Member Language Section -->
+    <div ng-hide="!preferredlang">
+    <ion-content drag-content="false" animation="no-animation">
+      <div class="row">
+        <div class="col">
+          <ion-list radio-group>
+            <ion-radio ng-value="'none'" disabled="disabled">Select A Language</ion-radio>
+            <ion-radio ng-repeat="language in terms_audio" ng-value="language.language" name="member_language" ng-model="formModel.member_language">{{ language.language }}</ion-radio>
+          </ion-list>
+
+          <!-- Required for Audio Caching -->
+
+         <!--  <audio id="audio-{{ language.language }}" width="100%" controls ng-repeat="language in terms_audio" class="hide">
+              <source cache-src="{{ Config.audioUrlPrefix }}{{ language.file }}" type="audio/mp4">
+              Your device does not support HTML5 audio.
+          </audio> -->
+
+          <!-- Audio Caching Ends -->
+
+              <label class="item">
+                  <button class="button button-block button-energized" ng-click="playTerms(formModel.member_language);">Play Terms &amp; Conditions</button>
+                </label>
+                <br/>
+          <br/>
+
+          <ion-list>
+            <ion-checkbox ng-model="member_terms_accept" class="item-text-wrap">I confirm that I have received, read, understood and accepted the product terms and conditions.</ion-checkbox>
+          </ion-list>
+          <br/>
+          <br/>
+          <label class="item item-input item-stacked-label">
+              <span class="item-text-wrap">Please enter the serial number on the policy wording being given to you:</span>
+            <input type="text" placeholder="Policy Number" ng-model="member.member_policy_number" ng-value="member.member_policy_number">
+          </label>
+          <br/>
+          <br/>
+          <button class="button button-block button-energized" ng-click="memberPreferredLanguage(formModel.member_language, member.member_policy_number);" ng-disabled="!member_terms_accept || !member.member_policy_number || !formModel.member_language">Next</button>
+
+          <button class="button button-block button-energized" ng-click="SaveMemberPreferredLanguage(formModel.member_language, member.member_policy_number);" ng-disabled="!member_terms_accept || !member.member_policy_number || !formModel.member_language">Save</button>
+
+          <div class="row">
+            <button class="button button-block button-stable" ng-click="backMemberPreferredLanguage();">Back</button>
+          </div>
+        </div>
+      </div>
+      </ion-content>
+    </div>
+
+    <!-- Member Photo Section -->
+    <div ng-hide="!memberphoto">
+    <ion-content drag-content="false" animation="no-animation">
+      <div class="row">
+        <div class="col">
+          <center>
+            <h3>Take a photo of the customer with the policy and disclosure notice booklet.</h3>
+            <br/>
+            <br/>
+            <div ng-hide="!photosuccess">
+              <img ng-src="{{preview_photo}}" id="smallImage">
+            </div>
+
+            <div ng-show="is_mobile">
+              <button class="button button-positive" ng-click="memberPhotoCapture();">Take Photo</button>
+            </div>
+            <div ng-show="!is_mobile">
+              <label class="item item-input item-stacked-label">
+                <span class="input-label">Upload Photo</span>
+                <br />
+
+                <input ng-model="photo" onchange="angular.element(this).scope().file_changed(this)" type="file" accept="image/*" id="file-input" capture/>
+              </label>
+            </div>
+          </center>
+          <br/>
+          <br/>
+          <div ng-hide="!photosuccess">
+            <button class="button button-block button-energized" ng-click="memberPhotoNext();">Next</button>
+          </div>
+
+          <div class="row">
+            <button class="button button-block button-stable" ng-click="backMemberPhoto();">Back</button>
+          </div>
+
+          <button class="button button-block button-stable" ng-click="memberPhotoCancel();">Cancel</button>
+        </div>
+      </div>
+      </ion-content>
+    </div>
+
+    <!-- Member Signature Section -->
+    <div ng-hide="!membersignature">
+      <ion-content scroll="true">
+      <div class="row">
+        <div class="col">
+
+          <center>
+            <h3>Client Signature</h3>
+            <p>Please get the customer to sign in the box below</p>
+
+          <br/>
+            <p><strong>Product:</strong> {{product_detail.name}}</p>
+                <p><strong>Cover Period:</strong> {{loan_term}} (Months)</p>
+                <p><strong>Amount:</strong> R {{loan_amount}}</p>
+                <p><strong>Premium:</strong> R {{loan_policy}}</p>
+
+                <br/>
+
+              <center>
+              <div ng-hide="!sign_photo">
+                <img src="{{sign_photo}}" width="300" height="180" style='border: 1px solid black;'/>
+              </div>
+
+                  <div ng-hide="sign_photo">
+
+                      <canvas id='signatureCanvas' width='300' height='180' style='border: 1px solid black;' on-touch="OnTouch($event)" on-Drag="OnDrag($event)" on-release="OnRelease($event)" ng-show="isPhoneGap"></canvas>
+                     
+                      <canvas id="signatureCanvasBrowser" name="signatureCanvas" style='border: 1px solid black;' width='500' height='180' ng-hide="isPhoneGap"></canvas>
+                      <div ng-hide="signsuccess">
+                          <div class='button-bar' ng-show="isPhoneGap">
+                              <a class='button button-energized' ng-click='clearCanvas()'>Clear</a>
+                              <a class='button button-balanced' ng-click='saveCanvas()'>Activate</a>
+                          </div>
+                          <div class='button-bar' ng-hide="isPhoneGap">
+                             <form action="https://sigplusweb.com/sign_chrome_ff_sigplusextlite.html#" name="FORM1">
+                                  <input type="HIDDEN" name="bioSigData">
+                                  <input type="HIDDEN" name="sigImgData">
+                                  <input type="hidden" name="sigStringData"></input>
+                                  <input type="hidden" name="sigRawData"></input>
+                              </form>
+                          </div>
+                          <div class='button-bar' ng-hide="isPhoneGap">
+                              <input class='button button-energized' id="SignBtn" name="SignBtn" type="button" value="Sign" onclick="StartSign()">
+                              <button class='button button-balanced' ng-click='saveCanvas()'>Activate</button>
+                          </div>
+                      </div>
+                    
+                  </div>
+              <br>
+              <p>By signing you confirm that you have received your policy document and you agree to the terms and conditions of the above policy.</p>
+              <br>
+                  <div ng-hide="!signsuccess">
+                      <div class='button-bar' ng-show="isPhoneGap">
+                          <a class='button button-energized' ng-click='reSignSignature()'>Re-Sign</a>
+                      </div>
+                      <div class='button-bar' ng-hide="isPhoneGap">
+                          <button class='button button-energized' onclick='StartSign()' ng-click='reSignSignature()'>Re-Sign</button>
+                      </div>
+                  </div>
+              </center>
+              <br>
+
+               <div ng-hide="!signsuccess">
+        <button class="button button-block button-energized" ng-click="memberSignature();">Complete Sales</button>
+        <button class="button button-block button-energized" ng-click="memberSignatureSave();">Save Quote</button>
+      </div>
+
+              <div class="row">
+          <button class="button button-block button-stable" ng-click="backMemberSign();">Back</button>
+        </div>
+
+            </div>
+      </div>
+
+    </div>
+    </ion-content>
+
+  </div>
+
+  <!-- Loan Complete Section -->
+  <div ng-hide="!loancomplete">
+    <ion-content drag-content="false" animation="no-animation">
+    <div class="row">
+      <div class="col">
+        <center>
+          <h1 ng-hide="paymentOption == 'atm' || paymentOption == 'card_machine'">Complete</h1>
+          <h1 ng-show="paymentOption == 'atm'"><strong>Awaiting ATM deposit</strong></h1>
+          <h1 ng-show="paymentOption == ''"><strong>Awaiting Card Machine Payment</strong></h1>
+          <p ng-show="paymentOption == 'card_machine'">Please make card payment now using <strong>{{application_id}}</strong> as a reference</p>
+          <p ng-show="paymentOption != 'card_machine'">Product sale complete</p>
+          <p><strong>Policy Number:</strong> {{policy_number}}</p>
+          <p>Write this policy number onto customers notice and disclosure booklet.</p>
+        </center>
+        <br/>
+        <br/>
+        <button class="button button-block button-stable" ng-click="closeLoan();">Close</button>
+      </div>
+    </div>
+    </ion-content>
+  </div>
+
+</div>
+</ion-view>

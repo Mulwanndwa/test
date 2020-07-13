@@ -1,0 +1,149 @@
+<div class="pages navbar-fixed toolbar-fixed">
+    <div data-page="travel_product_confirm" class="page">
+        <div class="navbar">
+            <div class="navbar-inner"> 
+                <div class="left">
+                    <a href="#" data-panel="left" class="open-panel link icon-only text-blue">
+                        <span class="fa fa-bars"></span>
+                    </a>
+                </div>
+                <div class="center sliding Montserrat-Regular uppercase"><img src="assets/img/logo-top-badge-only.png" style="height: 30px;" /> &nbsp;&nbsp;TRAVEL INSURANCE</div>
+                <div class="right">
+                    
+                </div>
+            </div>
+        </div>
+        
+            <div class="page-content" style="padding-bottom:0px;">
+                
+                <div class="lightbluearea purple">
+                    <div class="padded">
+                        
+                        <div class="Montserrat-Bold text-white pb5 text-center" id="TravelProductConfirm_Name"></div>
+                        <br>
+                    </div>
+                </div>
+                <form id="TravelCoverStep1Form">
+                
+                <div class="content-block-title text-purple text-center Montserrat-Bold">YOUR DETAILS</div>                
+                    
+                    <input type="hidden" name="product_id" />
+                    <input type="hidden" name="premium" /> 
+                    
+                    <div class="list-block">
+                        <ul>
+                            <li>
+                              <div class="item-content">
+                                <div class="item-inner">
+                                  <div class="item-title label Montserrat-Bold">Name</div>
+                                  <div class="item-input">
+                                    <input type="text" placeholder="Your name" name="first_name" readonly>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="item-content">
+                                <div class="item-inner">
+                                  <div class="item-title label Montserrat-Bold">Surname</div>
+                                  <div class="item-input">
+                                    <input type="text" placeholder="Your surname" name="last_name" readonly>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="item-content">
+                                <div class="item-inner">
+                                  <div class="item-title label Montserrat-Bold">SA ID</div>
+                                  <div class="item-input">
+                                    <input type="text" placeholder="Your South African ID Number" name="sa_id" readonly>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="item-content">
+                                <div class="item-inner">
+                                  <div class="item-title label Montserrat-Bold">Date of Birth</div>
+                                  <div class="item-input">
+                                    <input type="text" placeholder="Your date of birth" name="dob" readonly>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="item-content">
+                                <div class="item-inner">
+                                  <div class="item-title label Montserrat-Bold">Cellphone</div>
+                                  <div class="item-input">
+                                    <input type="text" placeholder="Your cellphone" name="tel_cell" readonly>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="item-content">
+                                <div class="item-inner">
+                                  <div class="item-title label Montserrat-Bold">Email</div>
+                                  <div class="item-input">
+                                    <input type="text" placeholder="Your email address" name="email_address" readonly>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="item-content">
+                                <div class="item-inner">
+                                  <div class="item-title label Montserrat-Bold">Postal Code</div>
+                                  <div class="item-input">
+                                    <input type="number" placeholder="Your postal code" name="postal_code">
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                        </ul>
+                    </div>  
+                    
+                    <div class="content-block-title text-purple text-center Montserrat-Bold">BENEFICIARY INFORMATION</div> 
+                    
+                    <div class="list-block">
+                        <ul>
+                            <li>
+                              <div class="item-content">
+                                <div class="item-inner">
+                                  <div class="item-title label Montserrat-Bold">Name</div>
+                                  <div class="item-input">
+                                    <input type="text" placeholder="Name of beneficiary" name="beneficiary_name">
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="item-content">
+                                <div class="item-inner">
+                                  <div class="item-title label Montserrat-Bold">Cellphone</div>
+                                  <div class="item-input">
+                                    <input type="text" placeholder="Beneficiary cellphone" name="beneficiary_sa_id">
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                        </ul>
+                    </div>  
+                
+                    <div class="content-block">
+                        <div class="row">
+                            <div class="col-50">
+                                <a href="#" id="TravelProductConfirm_Back" class="close-popup button button-big button-fill bg-blue uppercase">Back</a>
+                            </div>
+                            <div class="col-50">
+                                <a href="javascript:TravelProductStep1Save();" class="close-popup button button-big button-fill bg-purple uppercase">Next</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </form>  
+            </div>
+    </div>
+</div>

@@ -215,10 +215,10 @@ h2 {
 }
 
 .content-block-title {
-    font-size: 1.2em;
-    margin:0px;
-    padding:35px 15px 10px;
-    border-bottom: 2px solid #a81168;
+    font-size: 1.0em;
+    margin: 0px;
+    padding: 20px 10px 10px;
+    /* border-bottom: 2px solid #a81168;*/
 }
 
 .content-block-title + .list-block {
@@ -245,7 +245,7 @@ h2 {
         background-color: #a81168;
         background-color: rgb(142, 198, 63);
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        padding-top: 10px;
+        /* padding-top: 10px; */
         margin-top: -10px;
     }
 
@@ -358,9 +358,10 @@ h2 {
 
 .menubutton {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 10px;
+    /* border-radius: 10px; */
     padding: 10px;
     /*min-height: 110px;*/
+    background: #fff;
 }
 
 .policy-description {
@@ -569,4 +570,88 @@ h1, h2, h3, h4, h5, h6, span, li{
 
 .loaderText{
     text-align: center !important;
+}
+
+.demo-container {
+    width: 100%;
+    max-width: 350px;
+    margin: 50px auto;
+}
+
+form {
+    margin: 30px;
+}
+input {
+    /* width: 200px; */
+    margin: 10px auto;
+    display: block;
+}
+
+table{
+    width: 100%
+}
+#AddCardForm input{
+    border: solid thin #ddd !important;
+}
+#AddCardForm2 input{
+    border: solid thin #ddd !important;
+}
+.wrapper {
+    BORDER-BOTTOM: #000000 1px solid;
+    POSITION: relative;
+    BORDER-LEFT: #000000 1px solid;
+    PADDING-BOTTOM: 20px;
+    MARGIN: 0px auto;
+    PADDING-LEFT: 5px !important;
+    WIDTH: 350px !important;
+    PADDING-RIGHT: 5px !important;
+    HEIGHT: 420px;
+    BORDER-TOP: #000000 1px solid;
+    BORDER-RIGHT: #000000 1px solid;
+    PADDING-TOP: 20px;
+    background: #ffffff;
+    background: #ffffff;
+}
+
+#authform {
+    POSITION: relative;
+    PADDING-BOTTOM: 20px;
+    MARGIN: 0px auto;
+    PADDING-LEFT: 50px !important;
+    PADDING-RIGHT: 50px !;
+    PADDING-TOP: 20px;
+}
+
+.border-bottom{
+    border-bottom:solid thin #ddd !important;
+    margin-bottom: 5px;
+}
+.border-top{
+    border-bottom:solid thin #ddd !important;
+    margin-bottom: 5px;
+}
+.page-content .block{
+    background: #fff !important;
+}
+
+.product-list .menubutton{
+    border-radius: 3px !important;
+}
+.button i{
+    margin-top: 5px; 
+}
+.navbar .center {
+    text-transform: uppercase;
+}
+body{
+    font-family: 'Oswald', sans-serif !important;
+    font-size:20px;
+}
+
+.list-block .item-input {
+    border: solid 1px #ddd;
+}
+
+.MemberDetails .col-50{
+    /* box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.3) !important; */
 }

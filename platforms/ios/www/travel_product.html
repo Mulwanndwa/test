@@ -1,0 +1,85 @@
+<div class="pages navbar-fixed toolbar-fixed">
+    <div data-page="travel_product" class="page">
+        <div class="navbar">
+            <div class="navbar-inner"> 
+                <div class="left">
+                    <a href="#" data-panel="left" class="open-panel link icon-only text-blue">
+                        <span class="fa fa-bars"></span>
+                    </a>
+                </div>
+                <div class="center sliding Montserrat-Regular uppercase"><img src="assets/img/logo-top-badge-only.png" style="height: 30px;" /> &nbsp;&nbsp;TRAVEL INSURANCE</div>
+                <div class="right">
+                    
+                </div>
+            </div>
+        </div>
+        
+            <div class="page-content" style="padding-bottom:0px;">
+                
+                <div class="lightbluearea purple">
+                    <div class="padded">
+                        
+                        <div class="Montserrat-Bold text-white pb5 text-center" id="TravelProduct_Name"></div>
+                        <br>
+                    </div>
+                </div>
+                
+                <div id="TravelProduct_Meta">
+                    <div class="content-block" id="TravelProduct_Description">
+
+                    </div>
+
+                    <div class="content-block">
+                        <div class="row">
+                            <div class="col-50">
+                                <a href="javascript:StartBuyTravelCover();" class="close-popup button button-big button-fill bg-purple uppercase">Buy</a>
+                            </div>
+                            <div class="col-50">
+                                <a href="travel_insurance.html" class="close-popup button button-big button-fill bg-blue uppercase">Back</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="content-block" id="TravelProduct_Form" style="display:none;">
+                    
+                    <div class="content-block-title text-purple text-center Montserrat-Bold" style="padding-top: 0px;">Cover Period</div>
+                    <div class="list-block">
+                        <ul>
+                            <li>
+                              <div class="item-content">
+                                <div class="item-inner">
+                                  <div class="item-input">
+                                    <input type="text" name="dates" id="TravelProduct_Dates" class="text-center" placeholder="Select your cover period" readonly />
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                        </ul>
+                        <div class="text-center mt10" id="FuneralProduct_Value"></div>
+                        <input type="hidden" name="start" class="text-center" />
+                        <input type="hidden" name="end" class="text-center" />
+                        <input type="hidden" name="term" class="text-center" />
+                    </div>
+                    
+                    <input type="hidden" id="TravelProduct_Currency" />
+                    <input type="hidden" id="TravelProduct_Units" />
+                    
+                    <div class="content-block">
+                        <div class="row">
+                            <div class="col-50">
+                                <a href="javascript:GetTravelProductQuote();" class="close-popup button button-big button-fill bg-purple uppercase">Get Quote</a>
+                            </div>
+                            <div class="col-50">
+                                <a href="travel_insurance.html" class="close-popup button button-big button-fill bg-blue uppercase">Back</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            
+            </div>
+    </div>
+</div>

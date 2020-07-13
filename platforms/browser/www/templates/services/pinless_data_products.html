@@ -1,0 +1,12 @@
+<ion-view view-title="Mobile Data">
+  <ion-content>
+  <div ng-show="!(pinless_data_products_data)">
+   No products
+  </div>
+    <ion-list>
+      <ion-item ng-repeat="item in pinless_data_products_data" href="#/app/services/pinless_data_products/{{item.id}}">
+        {{item.description}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

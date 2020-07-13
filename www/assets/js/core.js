@@ -206,7 +206,7 @@ function get_product_types() {
                         html += '</li>';
 
 
-                        html2 += '<div class="col-50 center" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-radius: 10px;">';
+                        html2 += '<div class="col-50 center menubutton">';
                         html2 += '    <a href="funeral_cover.html?product_id=' + types[i].id + '" style="color:#29788b;">';
                         html2 += '   <div class="card-content" style="color:#29788b;">';
                         html2 += '     <div class="card-content-inner" style="color:#29788b;">';
@@ -234,7 +234,7 @@ function get_product_types() {
                         html += '</li>';
 
                         //html2 += '    <a href="funeral_cover.html?product_id=' + types[i].id + '" class="item-link close-panel">';
-                        html2 += '<div class="col-50 center" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-radius: 10px;">';
+                        html2 += '<div class="col-50 center menubutton">';
                         html2 += '    <a href="funeral_cover.html?product_id=' + types[i].id + '" style="color:#29788b;">';
                         html2 += '   <div class="card-content" style="color:#29788b;">';
                         html2 += '     <div class="card-content-inner" style="color:#29788b;">';
@@ -259,7 +259,7 @@ function get_product_types() {
                         html += '    </a>';
                         html += '</li>';
 
-                        html2 += '<div class="col-50 center" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-radius: 10px;">';
+                        html2 += '<div class="col-50 center menubutton">';
                         html2 += '    <a href="credit_life.html?product_id=' + types[i].id + '" style="color:#29788b;">';
                         html2 += '   <div class="card-content"  style="color:#29788b;">';
                         html2 += '     <div class="card-content-inner">';
@@ -285,7 +285,7 @@ function get_product_types() {
                         html += '</li>';
 
                         //html2 += '    <a href="life_insurance.html?product_id=' + types[i].id + '" class="item-link close-panel">';
-                        html2 += '<div class="col-50 center" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-radius: 10px;">';
+                        html2 += '<div class="col-50 center menubutton">';
                         html2 += '    <a href="life_insurance.html?product_id=' + types[i].id + '" style="color:#29788b;">';
                         html2 += '   <div class="card-content" style="color:#29788b;">';
                         html2 += '     <div class="card-content-inner">';
@@ -311,7 +311,7 @@ function get_product_types() {
                         html += '</li>';
 
                         //html2 += '    <a href="life_insurance.html?product_id=' + types[i].id + '" class="item-link close-panel">';
-                        html2 += '<div class="col-50 center" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-radius: 10px;">';
+                        html2 += '<div class="col-50 center menubutton">';
                         html2 += '    <a href="cellphone_insurance.html?product_id=' + types[i].id + '" style="color:#29788b;">';
                         html2 += '   <div class="card-content" style="color:#29788b;">';
                         html2 += '     <div class="card-content-inner">';
@@ -325,7 +325,7 @@ function get_product_types() {
                     }
                 }
 
-                html2 += '<div class="col-50 center" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-radius: 10px;">';
+                html2 += '<div class="col-50 center menubutton">';
                 html2 += '    <a href="javascript:checkCards()" style="color:#29788b;">';
                 html2 += '   <div class="card-content" style="color:#29788b;">';
                 html2 += '     <div class="card-content-inner">';
@@ -338,7 +338,7 @@ function get_product_types() {
                 html2 += '</div>';
 
                 /*
-                html2 += '<div class="col-50 center" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-radius: 10px;">';
+                html2 += '<div class="col-50 center menubutton">';
                 html2 += '    <a href="customer_manage_cards.html" style="color:#29788b;">';
                 html2 += '   <div class="card-content" style="color:#29788b;">';
                 html2 += '     <div class="card-content-inner">';
@@ -442,20 +442,12 @@ function _policy_search(policy_number){
         $("#FuneralProduct_Slider1").val(Policies.data.loan_term);
         $("#FuneralProduct_Currency").val(Policies.data.loan_term);
         $("#loan_premium").val(Policies.data.premium);
-
-        console.log(Policies.picture);
-        console.log('CurrentSignature :' + Policies.signature);
+        $("#cellphone_product_id_number").val(Policies.sa_id);
+        
 
         CurrentPicture = Policies.picture;
         CurrentSignature = Policies.signature;
 
-        /*
-        CurrentPolicyWordingId = Policies.policy_wording_id;
-        CurrentPolicyTerm = Policies.data.loan_term;
-        CurrentPolicyLoanAmount = Policies.data.loan_amount;
-        CurrentPolicyNumber = policy_number;
-        */
-        console.log("PolicyApplicationObject working...");
         PolicyApplicationObject = new Object();
 
         PolicyApplicationObject.policy_number = policy_number;
@@ -637,6 +629,9 @@ function renew_policy(ins_prod_id, policy_number) {
                     case 4:
                         mainView.router.loadPage('funeral_product.html?id=' + parseInt(product.id)+'&policy_number='+policy_number);
                     break;
+                    case 6:
+                        mainView.router.loadPage('cellphone_product.html?product_id=' + parseInt(product.id)+"&type_id=6&"+'&policy_number='+policy_number);
+                    break;
                 }
             }
         });
@@ -678,7 +673,7 @@ function policies_search() {
                     //html += '<div class="card" onClick="policy_search(' + "'" + Policies[i].policy_number + "'" + ')"> ';
                     html += '<div class="card"> ';
 
-                    html += '<table style="margin-right:10px">';
+                    html += '<table style="margin-left: 15px;">';
                     html += '<tr><td><strong>Customer</strong></td><td> : ' + Policies[i].type + '</td></tr>';
                     html += '<tr><td><strong>Agent</strong></td><td> : ' + Policies[i].sales_agent + '</td></tr>';
                     html += '<tr><td><strong>Policy Number</strong></td><td> : ' + Policies[i].policy_number + '</td></tr>';
@@ -1206,39 +1201,23 @@ function LoadFuneralProducts(id) {
                 });
             }
             else {                
-                var html = '<div class="row mt10">';
-                var counter = 0;
-                var _counter = "A";
+                var html = '';
                 for(var i = 0; i < result.data.products.length; i++) {
+                    if(result.data.products[i].premium > 1){
+                        html += '<div class="col-50 menubutton center"  style="color:#29788b; padding-bottom:-10px; margin-bottom: 10px;">';
+                        html += '<a href="funeral_product.html?id=' + result.data.products[i].id + '">';
+                        html += '      <div class="text-center " style="color:#29788b; ">' + result.data.products[i].name + '<br/>Premium :R' + result.data.products[i].premium + '</div>';
+                        html += ' </a>';
+                        html += ' </div>'; 
+                    }else{
+                        myApp.alert("No product found.", function(){
+                            mainView.router.loadPage('landing.html');
+                        })
+                    }
 
-                    counter++;
-                    _counter++;
-
-                    html += '<div class="col-45 menubutton"  style="color:#29788b; margin-bottom: 20px;">\
-                                <a href="funeral_product.html?id=' + result.data.products[i].id + '">\
-                                      <div class="text-center " style="color:#29788b; ">\
-                                          ' + result.data.products[i].name + '<br/>\
-                                        Premium :' + result.data.products[i].premium + '\
-                                      </div>\
-                                </a>\
-                             </div>'; 
-
-                    /*if((i+1) % 2 == 0) {
-                        html += '</div>';
-                        html += '<div class="row mt10">';
-                    }*/
                 }
 
-                /*while(counter % 2 != 0)
-                {
-                    html += '<div class="col-50 mb20 text-center">&nbsp;</div>';
-                    counter++;
-                }
-
-                html += '</div>';*/
-
-
-                $("#FuneralProductOptions").html(html);
+                $(".FuneralProductOptions").html(html);
             }
             
         }
@@ -1318,7 +1297,8 @@ function LoadFuneralProduct(id) {
             
             $("#FuneralProduct_Name").html(CurrentProduct.name);
             $("#FuneralProduct_Description").html(CurrentProduct.description);
-            
+            $("#FuneralProduct_Description a").addClass("download")
+           
             if(CurrentProduct.description == '') {
                 $("#FuneralProduct_Description").hide();
             }
@@ -3003,17 +2983,6 @@ function UploadPhoto(type) {
 
     
     if (type == "FuneralProductPhoto") {
-        /*
-        var can = document.getElementById("imgCanvas");
-        var img = document.getElementById("FuneralProductPhoto_PhotoDisplay");
-        var ctx = can.getContext("2d");
-        canvas.height = img.naturalHeight;
-        canvas.width = img.naturalWidth;
-        ctx.drawImage(img, 10, 10);
-        var jpegUrl = can.toDataURL()
-
-        Base64ImgTmp = jpegUrl.split(',')[1];*/
-
         var dataURL = compress(65, 400, 'image/png');
 
         Base64ImgTmp = dataURL.replace(/^data:image\/(png|jpg|jpeg);base64,/, "");
@@ -3369,8 +3338,8 @@ function ViewMessage(id) {
 
 function ClearCanvas() {
     SigningCanvas.clear(); 
-    $('.signoptions').hide();
-    $('.signoptions2').hide();
+    // $('.signoptions').hide();
+    // $('.signoptions2').hide();
     StartSign();
 }
 
@@ -3389,9 +3358,9 @@ function LoadFuneralPayScreen() {
         if(result.success) {             
             
             Wallet = result.data.wallets;
-            if(result.data.length > 0){
+            if(result.data != null){
                 for(var i = 0; i < result.data.payment_options.length; i++) {
-                    html += '<li style="border-bottom:solid thin #ddd;">';
+                    html += '<li style="border-bottom:solid thin #ddd; padding-bottom: 5px;" class="condensed-form">';
                     html += '  <a href="javascript:SelectPaymentMethod(\'' + result.data.payment_options[i].key + '\', \'funeral\');" class="item-link item-content">';
                     html += '    <div class="item-inner">';
                     html += '      <div class="item-title" style="margin: 0 auto;">' + result.data.payment_options[i].name + '</div>';
@@ -3979,9 +3948,9 @@ function AddNewCard2() {
 function SaveCustomerCard(customer_user_id, scanned = false) {
     $(".modal-overlay").show();
 
-    var formData = myApp.formToData('#AddCardForm');
+    var formData = myApp.formToData('#AddCardForm2');
     var valid = true;
-
+    formData.card_number = formData.card_number.replace(/\s/g, '') 
     if(formData.card_name == "") {
         valid = false;
         ShowNotification('Please enter the name as it appears on the card');
@@ -4042,6 +4011,7 @@ function SaveCustomerCard(customer_user_id, scanned = false) {
                                 mainView.router.loadPage('post.html?url=' + url + '&PAY_REQUEST_ID=' + prid + '&PAYGATE_ID=' + pgid + '&CHECKSUM=' + chk);
                                 ShowLoader = false;
                                 var timeout = window.setInterval(function () {
+                                    ShowLoader = false;
                                     $(".modal-overlay").hide();
                                     $$.post(services + "/cards/payment_ping", JSON.stringify({ PAY_REQUEST_ID: prid, token: User.token }), function (response) {
                                         var res = JSON.parse(response);
@@ -4221,6 +4191,7 @@ function SaveMyCard() {
     ShowLoader = true;
     var formData = myApp.formToData('#AddCardForm');
     var valid = true;
+    formData.card_number = formData.card_number.replace(/\s/g, '') 
     if(formData.card_name == "") {
         valid = false;
         ShowNotification('Please enter the name as it appears on the card');
@@ -4312,9 +4283,6 @@ function SaveMyCard() {
                                 });                    
                             }, 5000);
                             
-                            // inAppBrowserRef.addEventListener('exit', function(params) {
-                            //     clearInterval(paymenTimer);
-                            // });
                         }
                       },
                       {
@@ -4853,7 +4821,7 @@ function CustomerPayment(token, amount, policy_number, customer_user_id){
         $(".modal-overlay").hide();
 
         $(".policy_number").val(policy_number);
-        $(".premium").val(amount);
+        $(".premium").val(CurrentPolicyPremium);
         $("#CustomerPayNow").html('<a href="javascript:CustomerPayNow(' + "'" + token + "'," + amount + "," + customer_user_id+');" class="button button-big button-fill bg-pink uppercase" style="width: 60%; margin: 0 auto;">Proceed <i class="fa fa-arrow-right"></i></a>');
         
     },3000);
@@ -5190,20 +5158,7 @@ function set_premium(policy_number){
 function LoadCustomerCreditDebitCardScreen(customer_user_id) {
     myApp.showPreloader("Loading cards...");
     var valid  =  true
-   /* if (CurrentPolicyNumber == "" || CurrentPolicyNumber == undefined || CurrentPolicyNumber == null) {
-        myApp.hidePreloader();
-        $(".modal-overlay").show();
-        valid = false
-        myApp.prompt('Please enter policy number', function (value) {
-            valid = true
-            CurrentPolicyNumber = value
-            LoadCustomerCreditDebitCardScreen();
-            $(".modal-overlay").show();
-           
-        });
-    }
-  */
-    console.log('CurrentPolicyNumber :'+CurrentPolicyNumber);
+
 
     if(valid){
         var postData = { policy_number:CurrentPolicyNumber, token:User.token};
@@ -5215,7 +5170,10 @@ function LoadCustomerCreditDebitCardScreen(customer_user_id) {
                 var result = JSON.parse(response);
                 if(result.success){
                     var Policies = result.data.policies;
-                    CurrentPolicyPremium = Policies.premium;
+                    if(CurrentPolicyPremium == 0){
+                        CurrentPolicyPremium = Policies.premium;
+                    }
+                    
 
                     $$.ajax({
                         url: services + "/customer_cards/cards?policy_number="+CurrentPolicyNumber,
@@ -5236,58 +5194,33 @@ function LoadCustomerCreditDebitCardScreen(customer_user_id) {
                 
                                 if (AvailableCards.length > 0) {
                                     html += '<li class="card">';
-                                    html += '<table>';
+                                    html += '<table style="witdh:100%">';
                                     for (var i = 0; i < AvailableCards.length; i++) {
                                         html += '<tr style="border-bottom: solid thin #ddd;">';
-                                        html += '<td width="180px;">' + 'Card Number: <br>' + '<h2>' + AvailableCards[i].name + '</h2>' + '</td>';
-                                        html += '<td width="100px;">';
-                                        ///if (CurrentPolicyPremium > 0) {
+                                        html += '<td>' + '<h3>' + AvailableCards[i].name + '</h3>' + '</td>';
+                                        html += '<td>';
                                         html += '<a href="javascript:CustomerPayment(' + "'" + AvailableCards[i].token + "'" + ',' + CurrentPolicyPremium + ',' + "'" + CurrentPolicyNumber + "'" + "," + currentCustomerID + ')" class="button button-big button-fill bg-pink" style="width: 100%;margin: 0 auto;">Pay with card</a>';
-                                        //}
                                         html += '</td>';
-                                        html += '<td width="100px;">';
-                                        html += '<a style="background:red; width: 80%;margin: 0 auto; border:none" class="button button-big  bg-pink" href="javascript:RemoveCustomerCard(' + AvailableCards[i].id + ');"><i  class="fa fa-trash fa-2x"></i></a>';
+                                        html += '<td>';
+                                        html += '<a style="background:red; border:none" class="button button-big  bg-pink" href="javascript:RemoveCustomerCard(' + AvailableCards[i].id + ');"><i  class="fa fa-trash fa-2x"></i></a>';
                                         html += '</td>';
                                         html += '</tr>';
-                                        /*
-                                        html += '<div class="" style="text-align:center; border-bottom:solid thin #eee;margin-bottom: 8px;">';
-                                        
-                                        html += '      <div class="card-content"><br/><h1>' + AvailableCards[i].name + '</h1></div>';//<br /><small>' + AvailableCards[i].name + '</small>
-                                      
-                                        html += ' <div class="card-footer">';
-                                        if (CurrentPolicyPremium > 0) {
-                                            
-                                            html += ' <a href="javascript:CustomerPayment(' + "'" + AvailableCards[i].token + "'" + ',' + CurrentPolicyPremium + ',' + "'" + CurrentPolicyNumber + "'" + "," + currentCustomerID + ')" class="button button-big button-fill bg-pink" style="width: 70%;margin: 0 auto;">Pay With Card</a>';
-                                        }
-                                        html += '  &nbsp;&nbsp<a href="javascript:RemoveCustomerCard(' + AvailableCards[i].id + ');" class="button button-big button-fill bg-pink" style="width: 70%;margin: 0 auto; background:red !important">Delete <i class="fa fa-trash"></i></a>';
-                                        html += ' </div>';
-                                        html += '</div>';
-                                        */
+                                    
                                     }
                                     html += '</table>';
 
                                     html += '</li>';
-                                    html += '<li style="text-align:center">';
-                                    html += '<br/>';
-                                    html += '  <a style="width: 70%;margin: 0 auto;" href="scanned-customer-card.html?customer_user_id=' + result.customer_user_id + '" class="button button-big button-fill bg-pink uppercase">';
-                                    html += '   Add a new Card';
-                                    html += '  </a>';
-                                    /*
-                                        html += '  <a style="width: 70%;margin: 0 auto;" href="javascript:AddCustomerNewCard('+result.customer_user_id+');" class="button button-big button-fill bg-pink uppercase">';
-                                        html += '   Add a new Card';
-                                        html += '  </a>';
-                                    */
-                                    /*html += '   <h2>Or</h2>';
-                                    html += '  <a style="width: 70%;margin: 0 auto;" onclick="ScanCard()" href="scanned-customer-card.html?customer_id=' + result.customer_user_id +'" class="button button-big button-fill bg-pink uppercase">';
-                                    html += '   Scan Card';
-                                    html += '  </a>';
-                                    */
-                                    html += '</li>';
 
-                                    $("#YourCreditDebitCards").html(html);
+                                    
                                 } else {
-                                    //mainView.router.reloadPage("scanned-customer-card.html");
+                                    //mainView.router.reloadPage("scanned-customer-card.html?customer_user_id=" + currentCustomerID );
                                 }
+
+                                html += '<li>'
+                                html += '<a id="add-new-card" href="scanned-customer-card.html?customer_user_id=' + currentCustomerID + '" class="button button-big button-fill bg-pink"> Add a new Card</a>';
+                                html += '</li>';
+                                
+                                $("#YourCreditDebitCards").html(html);
                 
                                
                             }
@@ -5325,11 +5258,14 @@ function checkCustomerCards(type, customer_user_id) {
                 AvailableCards = result.data;
                 currentCustomerID = result.customer_user_id;
                 console.log("currentCustomerID :" + currentCustomerID);
-                if (AvailableCards.length > 0) {
+                //if (AvailableCards.length > 0) {
                     mainView.router.loadPage('customer_manage_cards.html?customer_user_id=' + currentCustomerID);
-                } else {
-                    mainView.router.loadPage('scanned-customer-card.html?customer_user_id=' + currentCustomerID);
-                }
+                // } else {
+                //     setTimeout(function () {
+                //         mainView.router.loadPage("scanned-card.html");
+                //     },300)
+                   
+                // }
 
                 if (type == 'success') {
                     //clearInterval(paymenTimer);
@@ -5362,14 +5298,12 @@ function checkCards(type) {
         myApp.addNotification({
             title: 'InsurApp',
             message: 'Your card has been successfully added.',
-            subtitle: '<i class="fa fa-check-circle-o fa-4x" style="color:green"></i>'
         });
     }
     if (type == 'declined') {
         myApp.addNotification({
             title: 'InsurApp',
             message: 'Your card was declined by your bank. Please contact your bank to correct this and try again.',
-            subtitle: '<i class="fa fa-exclamation-triangle fa-4x" style="color:red"></i>'
         });
     }
 
@@ -5477,21 +5411,14 @@ function ScanCard() {
         ];
 
         var len = cardIOResponseFields.length;
-        //var popupHTML = "";
-        //myApp.alert("Card scan complete", '<i class="fa fa-success"></i>');
-
         for (var i = 0; i < len; i++) {
             var field = cardIOResponseFields[i];
-            //alert(field + ": " + response[field])
-            /*window.localStorage.setItem('card_number', response['cardNumber'])
-            window.localStorage.setItem('redactedCardNumber', response['redactedCardNumber'])
-            window.localStorage.setItem('card_month', response['expiryMonth'])
-            window.localStorage.setItem('card_year', response['expiryYear'])*/
 
-            $("#card_number").val(response['cardNumber']);
-            $("#expiry").val(response['expiryMonth'] + "-" + response['expiryYear']);
+            $(".card_number").val(response['cardNumber']);
+            $(".expiry").val(response['expiryMonth'] + "-" + response['expiryYear']);
 
         }
+        $(".card_number").focus()
     };
 
     var onCardIOCancel = function () {
@@ -5505,11 +5432,7 @@ function ScanCard() {
             //myApp.alert("Able to scan.", "Success");
         }
 
-        /*var scanBtn = document.getElementById("scanBtn");
-        if (!canScan) {
-            scanBtn.innerHTML = "Manual entry";
-        }
-        */
+        
         CardIO.scan({
             "requireExpiry": true,
             "scanExpiry": true,
@@ -7327,7 +7250,7 @@ function LoadCellphoneProducts() {
                     html += '<option value="'+ device[i].id +'">'+ device[i].make_name +"</option>"
                 }
 
-                $("#CellphoneProductOptions").html(html);
+                $("#CellProductOptions").html(html);
                 
 
             }
@@ -7361,6 +7284,7 @@ function calculateCellphonePremium(){
             dob: dob,
             model_id: $("#CellphoneModelProductOptions").val()
         };
+        currentModelId = $("#CellphoneModelProductOptions").val()
         $.ajax({
             beforeSend: function (xhr) {
                 xhr.setRequestHeader('Authorization', User.token)
@@ -7368,6 +7292,7 @@ function calculateCellphonePremium(){
             complete: function () {
                 $(".loader-overlay").hide();
                 $(".modal-overlay").hide();
+                $('.premium-value').show();
             myApp.hidePreloader()
             },
             url: services+'/insurapp/get_product_premium/'+CurrentProduct.id, 
@@ -7376,16 +7301,25 @@ function calculateCellphonePremium(){
             success: function (result) {
                 if(result.success) {
                     console.log("premium - "+result.data.premium)
+                   
                     if (result.data.premium > 0) {
-                        CurrentProduct.product_data = {
+                       var product_data = {
                             loan_amount: $("#CellphoneProduct_CoverPeriodAmount").val(),
-                            loan_term: $("#CellphoneProduct_CoverPeriod").val()
+                            loan_term: $("#CellphoneProduct_CoverPeriod").val(),
+                            model_id: $("#CellphoneModelProductOptions").val()
                         }
+                        
+                        CurrentPolicyPremium = result.data.premium
+
+                        PolicyApplicationObject.product_data = product_data
                         $("#CellphoneProductPremium").html("R" + Number(result.data.premium).toFixed(2));
                         $("#cellphone_loan_premium").val(result.data.premium);
                         $('#customer_idnumber').show()
                         $("#proceed").show()
                     }
+                    setTimeout(function(){ 
+                        $("div").scrollTop(1000);
+                    }, 100);
                 }
             },
             error: function (data) {
@@ -7403,10 +7337,6 @@ function cellphonePremium(id){
     var term_min = 1
     var term_max = 72
     var currency = CurrentProduct.loan_amount
-    CurrentProduct.product_data = {
-        loan_amount: CurrentProduct.loan_amount,
-        loan_term: ''
-    }
 
     $("#device_id").val(id)
     $("#CellphoneProduct_CoverPeriodAmount").val(CurrenDevice.sum_insured)
@@ -7453,12 +7383,46 @@ function LoadCellphoneModels(id){
         }
     });
 }
-function LoadCellphoneProduct(id) {
-   
-    $$.post(services + "/insurapp/get_product/" + 131, JSON.stringify({token: User.token, type_id:'6'}), function(response) {
+function LoadCellphoneInsProducts(id) {
+    
+    $$.post(services + "/insurapp/get_products/" + id, JSON.stringify({token: User.token, type_id:id}), function(response) {
+        var result = JSON.parse(response);
+        
+        if(result.success) {
+            var html = '<div class="row mt10">';
+           
+            for(var i = 0; i < result.data.products.length; i++) {
+
+                html += '<div class="col-100 menubutton"  style="color:#29788b; margin-bottom: 20px;">\
+                            <a href="cellphone_product.html?product_id=' + result.data.products[i].id + '&type_id=' + id + '">\
+                                  <div class="text-center " style="color:#29788b; ">\
+                                    ' + result.data.products[i].name + '\
+                                  </div>\
+                            </a>\
+                         </div>'; 
+
+            }
+
+            $("#CellphoneProductOptions").html(html);
+
+            //LoadCellphoneProduct(result.data.products[0].id);
+        }
+        else {
+            myApp.alert(result.message);
+        }   
+    },
+    function (value) {
+
+    });
+}
+
+function LoadCellphoneProduct(id, type_id){
+ 
+    $$.post(services + "/insurapp/get_product/" + id, JSON.stringify({token: User.token, type_id:type_id}), function(response) {
         var result = JSON.parse(response);
         if(result.success) {
             CurrentProduct = result.data.product;
+            $("#CellphoneProduct_Description").html(CurrentProduct.description);
             LoadCellphoneProducts();
         }
         else {
@@ -7519,7 +7483,7 @@ function GetCellphoneProductQuote() {
                 PolicyApplicationHandsetObject = result.data;
                 $(".modal-overlay").show();
                 myApp.confirm('Your premium will be R'+Number(result.data.premium).toFixed(2)+'. Would you like to buy this?',function() {
-                    CurrentPolicyPremium = result.data.premium;
+                    //CurrentPolicyPremium = result.data.premium;
                     CurrentIdNumber = id_number
                     CurrentDob = dob
                     mainView.router.loadPage('cellphone_product_confirm.html');
@@ -7605,13 +7569,13 @@ function getDobFromId(id_number){
     var dob_day = id_number.substr(4, 2);
 
     var current_year = (new Date()).getFullYear();
-
+    var valid = true
     if(id_number == '' || id_number == undefined){
         valid = false
         myApp.hidePreloader()
-        myApp.alert("ID Number is required.", function(){
-            $("#cellphone_product_id_number").focus()
-        })
+        // myApp.alert("ID Number is required.", function(){
+        //     $("#cellphone_product_id_number").focus()
+        // })
     }
 
     if (id_year <= (current_year - 98)) {
@@ -7620,7 +7584,14 @@ function getDobFromId(id_number){
         dob_year = "19" + dob_year;
     }
 
-    return dob_year + '-' + dob_month + '-' + dob_day;
+    var values = {
+        dob_year:dob_year,
+        dob_day:dob_day,
+        dob: dob_year + '-' + dob_month + '-' + dob_day,
+        valid: valid
+    };
+
+    return values;
 }
 
 function allow_numeric(evt) {
@@ -7644,15 +7615,25 @@ function allow_numeric(evt) {
 function LoadCellphoneProductConfirmation(premium, imei) {
     var valid = true
     var dob = getDobFromId($("#cellphone_product_id_number").val())
-
+    var current_year = (new Date()).getFullYear();
+    var dob_year = dob.dob_year;
+    var age = current_year - dob_year;
+    var dateOfBirth = dob.dob
+    console.log("age",age)
     if(ValidateID($("#cellphone_product_id_number").val()) == false){
         valid = false
         myApp.alert("ID number does not appear to be valid")
+    }else if(dob.valid == false){
+        valid = false
+        
+    }else if(age < 18){
+        valid = false
+        myApp.alert("Customers under the age of 18 not allowed", "Error")
     }
    
 
     if(valid){
-        ShowLoader = false
+        ShowLoader = true
         $("#CellphoneProductConfirm_Name").html(CurrentProduct.name);
         $("#CellphoneProductConfirm_Back").attr('href', 'cellphone_product.html?id=' + CurrentProduct.id);
         
@@ -7660,7 +7641,7 @@ function LoadCellphoneProductConfirmation(premium, imei) {
         $("#CellphoneCoverStep1Form [name='premium']").val(premium);
         $("#CellphoneCoverStep1Form [name='imei']").val(imei);
         $("#CellphoneCoverStep1Form [name='sa_id']").val($("#cellphone_product_id_number").val());
-        $("#CellphoneCoverStep1Form [name='dob']").val(dob);
+        $("#CellphoneCoverStep1Form [name='dob']").val(dateOfBirth);
         
         var values = {token: User.token, customer_idcell: $("#cellphone_product_id_number").val()};
         
@@ -7679,7 +7660,7 @@ function LoadCellphoneProductConfirmation(premium, imei) {
                     $("#CellphoneCoverStep1Form [name='first_name']").val(result.data.customer[0].first_name);
                     $("#CellphoneCoverStep1Form [name='last_name']").val(result.data.customer[0].last_name);
                     $("#CellphoneCoverStep1Form [name='sa_id']").val(result.data.customer[0].sa_id);
-                    $("#CellphoneCoverStep1Form [name='dob']").val(dob);
+                    $("#CellphoneCoverStep1Form [name='dob']").val(dateOfBirth);
                     $("#CellphoneCoverStep1Form [name='tel_cell']").val(result.data.customer[0].tel_cell);
                     $("#CellphoneCoverStep1Form [name='email_address']").val(result.data.customer[0].email_address);
                     $("#CellphoneCoverStep1Form [name='postal_code']").val(result.data.customer[0].postal_code);
@@ -7803,18 +7784,43 @@ function CellphoneProductStep1Save() {
         valid = false;
         ShowNotification('Please enter customers last name');
         return false
+    }else if(formData.tel_cell == '') {
+        valid = false;
+        ShowNotification('Please enter customers cellphone');
+        return false
     }else if(formData.postal_code == '') {
         valid = false;
-        ShowNotification('Please enter ustomers postal code');
+        ShowNotification('Please enter customers postal code');
         return false
-    }else if(formData.beneficiary_name == '') {
+    } else if (formData.postal_code.length > 4) {
         valid = false;
-        ShowNotification('Please enter the beneficiary name');
-        return false
+        myApp.alert('Please enter a valid postal code, 4 digits is required, 0000 and 9999 not accepted', function () {
+            document.getElementById("postal_code2").focus();
+        });
+
+    }
+    else if (formData.postal_code.length < 4) {
+        valid = false;
+        myApp.alert('Please enter a valid postal code, 4 digits is required, 0000 and 9999 not accepted', function () {
+            document.getElementById("postal_code2").focus();
+        });
+
+    }
+    else if (formData.postal_code == 0000) {
+        valid = false;
+        myApp.alert('Please enter a valid postal code, 4 digits is required, 0000 and 9999 not accepted', function () {
+            document.getElementById("postal_code2").focus();
+        });
+    }
+    else if (formData.postal_code == 9999) {
+        valid = false;
+        myApp.alert('Please enter a valid postal code, 4 digits is required, 0000 and 9999 not accepted', function () {
+            document.getElementById("postal_code2").focus();
+        });
     }
     else if(formData.beneficiary_sa_id == '') {
         valid = false;
-        ShowNotification('Please enter the beneficiaries cellphone number');
+        ShowNotification('Please enter the alternative cellphone number');
         return false
     }
     
@@ -7846,7 +7852,8 @@ function CellphoneProductStep1Save() {
                     PolicyApplicationObject.value = PolicyApplicationHandsetObject.value;
                     
                     var product_data = {
-                        term: CurrentPolicyTerm
+                        term: CurrentPolicyTerm,
+                        model_id: currentModelId
                     };
                     
                     PolicyApplicationObject.product_data = product_data;
@@ -7884,18 +7891,20 @@ function LoadCellphoneProductTerms() {
     var html = '';
     if(CurrentProduct){
          for(var i = 0; i < CurrentProduct.terms_audio.length; i++) {
-            html += '<li>';
-            html += '  <a href="javascript:StreamAudioFromUrl(\'' + audioLocation + CurrentProduct.terms_audio[i].file +'\', \'cellphone\', \'' + CurrentProduct.terms_audio[i].language + '\');" class="item-link item-content">';
-            html += '    <div class="item-inner">';
-            html += '      <div class="item-title">' + CurrentProduct.terms_audio[i].language + '</div>';
-            html += '    </div>';
-            html += '  </a>';
-            html += '</li>';
+
+            html += ' <li style="border-bottom:solid thin #ddd">'
+            html += '   <label class="label-radio item-content" onclick="SelectLanguage(\'' + audioLocation + CurrentProduct.terms_audio[i].file + '\', \'funeral\', \'' + CurrentProduct.terms_audio[i].language + '\')">'
+            html += '      <input type="radio" name="my-radio" value="">'
+            html += '      <div class="item-inner">'
+            html += '          <div class="item-title">  ' + CurrentProduct.terms_audio[i].language +  '</div>';
+            html += '      </div>'
+            html += '   </label>'
+            html += ' </li>';
         }
     
     }
-   
-    $("#CellphoneProductTerms_Buttons").html(html);
+
+    $("#CellphoneProductsTerms_Buttons").html(html);
 }
 
 function AcceptTermsCellphone() {
@@ -8432,11 +8441,14 @@ function updatePassword() {
      $("#FuneralProduct_Description").hide();
      $("#applyBtn").hide();
      $("#applyBtnCredit").hide();
-
+     $("#CellphoneProduct_Description").hide();
+     $(".applyBtn").hide();
+     $(".MemberDetails").show();
+     $(".lightbluearea").show();
      window.setTimeout(function () {
          console.log("scroll to top...");
          $(".page-content").animate({ scrollTop: 0 }, "fast");
-     }, 850);
+     }, 300);
  }
 
 
@@ -8460,6 +8472,7 @@ function validateID(idnumber) {
 
 function Resign() {
     $(".signoptions2").hide();
+    $(".signoptions").show();
     $("#clearBtn").show();
     $("#canvasSignature").show();
     $("#FuneralProductSign_SignDisplay").hide();
@@ -8477,15 +8490,20 @@ function Resign() {
 }
 
 function DoSendPaymentOtp(policy_number) {
+    $(".modal-overlay").hide();
     var values = {
         policy_number: policy_number,
         token: User.token
     }
+    ShowLoader = false
     $$.post(services + "/insurapp/send_customer_card_otp?policy_number=" + policy_number, JSON.stringify(values), function (response) {
         var result = JSON.parse(response);
+        ShowLoader = true
         if (result.success) {
+            $(".modal-overlay").hide();
             myApp.alert(result.message);
         } else {
+            $(".modal-overlay").hide();
             myApp.alert(result.message);
         }
     });
@@ -8530,3 +8548,8 @@ function BasicLogin() {
     }
     
 }
+
+function Download() {
+    cordova.InAppBrowser.open('https://admin.insurapp.co.za/assets/uploads/insurance/products/210e4-bonsella-elect-funeral-cover-20200625-final.pdf', '_blank', 'location=yes');
+}
+

@@ -1,0 +1,10 @@
+<ion-view view-title="Airtime">
+  <ion-spinner icon="spiral" ng-show="loading"></ion-spinner>
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="item in pinless_airtime_products_data" href="#/app/services/pinless_airtime_products/{{item.id}}">
+        {{item.description}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

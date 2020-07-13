@@ -1,0 +1,65 @@
+<ion-view view-title="InsurApp"  hide-back-button="true">
+
+    <ion-content>
+        <style>
+      .button.button-positive {
+            background-color: #{{appDesign.colour1}};
+      }
+      .red_txt {
+        color: #E52626;
+        white-space: nowrap;
+        margin-right: 10px;
+      }
+      .green_txt {
+        color: #34E526;
+        white-space: nowrap;
+      }
+        </style>
+        <div class="page-content" style="padding-bottom:0px;">
+            <div class="logo">
+                <img data-ng-src="{{appDesign.logo}}" width="200" alt="InsurApp" />
+            </div>
+
+            <div class="row">
+                <div class="col-40" ng-bind="loginData.name"></div>
+                <div class="col-20 red_txt">{{ loginData.wallets.pending_balance | currency: "R" : 2  }}</div>
+                <div class="col-20 green_txt">{{ loginData.wallets.wallet_balance | currency: "R" : 2  }}</div>
+                <div class="col-20"><img src="img/generic_card.jpg" width="30" /></div>
+            </div>
+            <!--
+            <div class="list">
+                <ion-list radio-group [(ngModel)]="relationship">
+                    <ion-radio ng-value="'none'" disabled="disabled">Select A Language</ion-radio>
+                    <ion-radio value="friends"  [(ionSelect)]="languageChanged('f')"></ion-radio>
+                    <ion-radio ng-model="member_language" ng-value="1" name="member_language" ng-change="languageChanged(1)">1</ion-radio>
+                    <ion-radio ng-model="member_language" ng-value="2" name="member_language" ng-click="languageChanged(2)">2</ion-radio>
+                    <ion-radio ng-model="member_language" ng-value="3" name="member_language" ng-click="languageChanged(3)">3</ion-radio>
+                  </ion-list>
+
+
+                <label class="item">
+                        <button class="button button-block button-energized" ng-click="checkLanguage(member_language);">Test</button>
+                </label>
+              </div>
+              -->
+            <!-- <a ng-href="/#/credit-life/{{ac_creditlife}}" class="button button-block button-energized" ng-hide="ac_creditlife == ''">Credit life</a>
+         <a ng-href="/#/life-insurance/{{ac_insurelife}}" class="button button-block button-energized" ng-hide="ac_insurelife == ''">Life insurance</a>
+         <a ng-href="/#/funeral/{{ac_funeralcover}}" class="button button-block button-energized" ng-hide="ac_funeralcover == ''">Funeral Cover</a>
+         <a ng-href="/#/app/services/pinless_airtime_products" class="button button-block button-energized">Airtime</a>
+         <a ng-href="/#/app/services/pinless_data_products" class="button button-block button-energized">Data</a>
+         <a ng-href="/#/claim" class="button button-block button-energized">Submit a Claim</a>
+         <a ng-href="/#/" class="button button-block button-energized">Update details/Help</a> -->
+
+
+            <label class="item">
+                <button class="button button-block button-positive" type="button" ng-click="doLogout()">Log Out</button>
+
+            </label>
+            <!-- <input type="file" value="Photo" name="" accept="image/*" style="display: none"> -->
+            <!-- <button class="button button-block button-positive" type="button" ng-click="memberPhotoCapture()">Photo</button> -->
+            <!--  <div ng-hide="!photosuccess">
+              <img ng-src="{{preview_photo}}">
+            </div> -->
+          </div>
+    </ion-content>
+</ion-view>
